@@ -232,15 +232,6 @@ return {
                     },
                     {
                         text = {
-                            { "󱥚", hl = "SnacksDashboardText", width = 2 },
-                            { "Themes", hl = "SnacksDashboardText", width = 30 },
-                            { "[v]", hl = "SnacksDashboardKey" },
-                        },
-                        key = "v",
-                        action = ":Themify",
-                    },
-                    {
-                        text = {
                             { "", hl = "SnacksDashboardText", width = 2 },
                             { "Quit", hl = "SnacksDashboardText", width = 30 },
                             { "[q]", hl = "SnacksDashboardKey" },
