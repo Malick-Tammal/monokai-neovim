@@ -39,24 +39,6 @@ return {
             desc = "UnDim",
             mode = "n",
         },
-
-        -- {
-        -- 	"<leader>t",
-        -- 	function()
-        -- 		Snacks.terminal()
-        -- 	end,
-        -- 	desc = "Terminal",
-        -- 	mode = "n",
-        -- },
-
-        -- {
-        -- 	"<leader>E",
-        -- 	function()
-        -- 		Snacks.explorer()
-        -- 	end,
-        -- 	desc = "Snacks explorer",
-        -- 	mode = "n",
-        -- },
     },
 
     -- HACK: Config
@@ -94,32 +76,6 @@ return {
 
         -- INFO: Word highlight
         words = { enabled = true },
-
-        explorer = {
-            -- layout = {
-            -- 	position = "right",
-            -- 	box = "vertical",
-            -- 	width = 40,
-            -- 	{
-            -- 		win = "input",
-            -- 		height = 1,
-            -- 		border = "rounded",
-            -- 		title = "Snacks Picker",
-            -- 		wo = {
-            -- 			winhighlight = "FloatBorder:SnacksExplorerBorder,NormalFloat:SnacksExplorerNormal,SnacksPickerPrompt:SnacksPickerPromptTransparent",
-            -- 		},
-            -- 	},
-            -- 	{
-            -- 		win = "list",
-            -- 		border = "none",
-            -- 		wo = {
-            -- 			winhighlight = "FloatBorder:SnacksExplorerBorder,NormalFloat:SnacksExplorerNormal",
-            -- 		},
-            -- 	},
-            -- },
-            -- hidden = true,
-            -- auto_close = true,
-        },
 
         -- INFO: Picker (Buffers / Smart file picker)
         picker = {
@@ -171,11 +127,6 @@ return {
 
         -- INFO: Quick file rendering
         quickfile = { enabled = true },
-
-        -- INFO: Terminal
-        terminal = {
-            enabled = true,
-        },
 
         statuscolumn = {
             enabled = true,

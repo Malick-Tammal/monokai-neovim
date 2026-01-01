@@ -101,11 +101,11 @@ map.set("v", "p", '"_dP', opts) -- Keep last yanked when pasting
 -----------------------------------------------------------
 --  INFO: Diagnostic
 -----------------------------------------------------------
-map.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" }) -- Previous Diagnostic
-map.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })     -- Next Diagnostic
-map.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" }) -- Floating Diagnostic
-map.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })            -- Diagnostic list
-map.set("n", "<leader>dt", "<Cmd>lua require('tiny-inline-diagnostic').toggle()<CR>")                -- Toggle diagnostic
+map.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })                   -- Previous Diagnostic
+map.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })                       -- Next Diagnostic
+map.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })                   -- Floating Diagnostic
+map.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })                              -- Diagnostic list
+map.set("n", "<leader>td", "<Cmd>lua require('tiny-inline-diagnostic').toggle()<CR>", { desc = "Toggle diagnostics" }) -- Toggle diagnostic
 
 -----------------------------------------------------------
 --  INFO: Neotree
@@ -206,17 +206,6 @@ map.set("n", "<leader>C3", function()
         style = "style-3", -- style 3
     })
 end, { desc = "Header 3" })
-
------------------------------------------------------------
---  INFO: Transparency
------------------------------------------------------------
-map.set("n", "<leader>o", function()
-    vim.cmd("TransparentToggle")
-
-    local themify = require("themify.api")
-
-    themify.set_current(themify.get_current().colorscheme_id, themify.get_current().theme)
-end)
 
 -----------------------------------------------------------
 --  INFO: Renamer
