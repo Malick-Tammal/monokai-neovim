@@ -283,12 +283,12 @@ end, { desc = "Clear notifications" })
 -----------------------------------------------------------
 --  INFO: Toggle color highlights
 -----------------------------------------------------------
-local highlight_colors = require("nvim-highlight-colors")
-
--- Create a custom toggle function
-local function toggle_colors()
-    highlight_colors.toggle()
-end
-
--- Map it to a keybind (e.g., <leader>tc for "Toggle Colors")
-vim.keymap.set('n', '<leader>tc', toggle_colors, { desc = 'Toggle Color Highlights' })
+-- local highlight_colors = require("nvim-highlight-colors")
+--
+-- -- Create a custom toggle function
+-- local function toggle_colors()
+--     highlight_colors.toggle()
+-- end
+--
+-- -- Map it to a keybind (e.g., <leader>tc for "Toggle Colors")
+-- vim.keymap.set('n', '<leader>tc', toggle_colors, { desc = 'Toggle Color Highlights' })
