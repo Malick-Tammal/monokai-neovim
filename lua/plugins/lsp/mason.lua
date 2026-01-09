@@ -39,6 +39,7 @@ return {
                 "tailwindcss",
                 "bashls",
                 "hyprls",
+                "qmlls",
             },
             automatic_enable = false,
         })

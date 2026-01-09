@@ -14,6 +14,10 @@ return {
 
             -- INFO: LSPs configs
 
+            vim.lsp.config("*", {
+                capabilities = require("cmp_nvim_lsp").default_capabilities()
+            })
+
             vim.lsp.config("lua_ls", {
                 settings = {
                     Lua = {
@@ -33,6 +37,16 @@ return {
                 showSuggestionsAsSnippets = true,
             })
 
+            vim.lsp.config("qmlls", {
+                cmd = { "qmlls", "-E" },
+                filetypes = { "qml", "qmljs" },
+                -- Ensure Neovim sees your project folder
+                root_markers = { ".qmlls.ini", "shell.qml", ".git" },
+                settings = {
+                    -- Optional: specific qmlls tweaks
+                }
+            })
+
             -- INFO: LSPs activation
             vim.lsp.enable({
                 "lua_ls",
@@ -45,6 +59,7 @@ return {
                 "tailwindcss",
                 "bashls",
                 "hyprls",
+                "qmlls",
             })
         end,
     },
@@ -53,7 +68,7 @@ return {
     {
         "rachartier/tiny-inline-diagnostic.nvim",
         event = "LspAttach", -- Or `LspAttach`
-        priority = 1000, -- needs to be loaded in first
+        priority = 1000,     -- needs to be loaded in first
         config = function()
             require("tiny-inline-diagnostic").setup({
                 preset = "modern",

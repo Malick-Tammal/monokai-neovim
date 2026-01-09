@@ -9,7 +9,8 @@ return {
             local languages = {
                 "lua", "python", "javascript", "typescript", "tsx",
                 "bash", "html", "css", "scss", "json", "yaml", "toml",
-                "markdown", "markdown_inline", "vim", "vimdoc", "regex"
+                "markdown", "markdown_inline", "vim", "vimdoc", "regex",
+                "qmljs"
             }
             for _, lang in ipairs(languages) do
                 if not vim.treesitter.language.get_lang(lang) then
