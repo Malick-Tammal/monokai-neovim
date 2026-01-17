@@ -164,6 +164,55 @@ local function header(opts)
         else
             style_1()
         end
+
+
+        -- INFO: CSS / SCCS
+    elseif
+        filetype == "css" or
+        filetype == "scss"
+    then
+        local function style_1()
+            local template = "/*----------------------------------------------------------*/"
+            local heading = vim.fn.input("Heading :")
+            for i = 1, 2 do
+                set_comment({ template })
+                if i == 1 then
+                    set_comment({ "/*-- " .. heading .. " --*/" })
+                end
+            end
+        end
+
+        local function style_2()
+            local template = "/*-//---------------------------------------------------//-*/"
+            local heading = vim.fn.input("Heading :")
+            for i = 1, 2 do
+                set_comment({ template })
+                if i == 1 then
+                    set_comment({ "/*-- " .. heading .. " --*/" })
+                end
+            end
+        end
+
+        local function style_3()
+            local template = "/*"
+            local heading = vim.fn.input("Heading :")
+            for i = 1, 2 do
+                set_comment({ template })
+                if i == 1 then
+                    set_comment({ "/*-- " .. heading })
+                end
+            end
+        end
+
+        if opts.style == "style-1" then
+            style_1()
+        elseif opts.style == "style-2" then
+            style_2()
+        elseif opts.style == "style-3" then
+            style_3()
+        else
+            style_1()
+        end
     else
         print('"' .. filetype .. '"' .. " is unsupported!")
     end
