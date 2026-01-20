@@ -37,18 +37,13 @@ require("lazy").setup({
         version = false,
     },
 
-    install = { colorscheme = { "nvchad" } },
-
     -- Auto update plugins
-    checker = { enabled = false, notify = false },
+    checker = { enabled = false, notify = true },
 
     -- UI tweaks
     ui = {
-        border = "rounded",
-        size = {
-            width = 0.8,
-            height = 0.8,
-        },
+        size = { width = 0.8, height = 0.8 },
+        throttle = 20,
     },
 
     change_detection = { enabled = false },

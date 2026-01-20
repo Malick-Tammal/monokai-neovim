@@ -312,6 +312,10 @@ mapSelect("ia", "@parameter.inner", "Select Inside Arg")
 mapSelect("al", "@loop.outer", "Select Around Loop")
 mapSelect("il", "@loop.inner", "Select Inside Loop")
 
+-- === BLOCKS (Curly Braces / Objects / Scopes) ===
+mapSelect("ab", "@block.outer", "Select Around Block/Object")
+mapSelect("ib", "@block.inner", "Select Inside Block/Object")
+
 -- === MOVEMENT (Jumping) ===
 local move = require("nvim-treesitter-textobjects.move")
 
