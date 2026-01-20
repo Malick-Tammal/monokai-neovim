@@ -21,5 +21,15 @@ return {
                 ["cmp.entry.get_documentation"] = true,
             },
         },
+        routes = {
+            {
+                filter = {
+                    event = "cmdline",
+                    find = "^%s*:IncRename",
+                },
+                view = "cmdline_popup", -- Try "input" or "cmdline_popup"
+                opts = { enter = true },
+            },
+        },
     },
 }

@@ -3,8 +3,12 @@ return {
     branch = "v3.x",
     event = "VeryLazy",
 
-    -- HACK: Config
+    --  INFO: Keymaps
+    keys = {
+        { "<leader>tn", "<Cmd>Neotree toggle<CR>", desc = "Explorer Neotree" },
+    },
 
+    --  INFO: Config
     opts = {
         close_if_last_window = true,
         popup_border_style = "rounded",

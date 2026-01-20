@@ -1,5 +1,4 @@
 return {
-
     "folke/which-key.nvim",
     event = "VeryLazy",
 
@@ -26,7 +25,7 @@ return {
             { "<leader>t", group = "Toggles", icon = { icon = "", color = "yellow" } },
 
             -- Neotree
-            { "<leader>n", group = "Neotree", icon = { icon = "󰲂 ", color = "yellow" } },
+            { "<leader>tn", group = "Neotree", icon = { icon = "󰲂 ", color = "yellow" } },
 
             -- Delete
             { "<leader>x", group = "Delete (Black Hole)", icon = { icon = "󰗨", color = "red" } },
@@ -53,7 +52,6 @@ return {
             { "<leader>bf", desc = "Find", icon = { icon = " ", color = "yellow" } },
 
             -- Telescope
-            -- { "<leader>f", desc = "Telescope", icon = { icon = "", color = "red" } },
             { "<leader>h", desc = "Help tags", icon = { icon = "󰞋 ", color = "green" } },
             { "<leader>G", desc = "Grep", icon = { icon = "󰈞 ", color = "cyan" } },
 
@@ -77,8 +75,8 @@ return {
             { "<leader>cd", desc = "Dim", icon = { icon = "󱜟 ", color = "yellow" } },
             { "<leader>cD", desc = "UnDim", icon = { icon = "󰞏 ", color = "yellow" } },
 
-            -- Finder
-            { "<leader><space>", desc = "Finder", icon = { icon = "󱘞 ", color = "orange" } },
+            -- Telescope
+            { "<leader><space>", desc = "Telescope", icon = { icon = " ", color = "orange" } },
 
             -- Zen mode
             { "<leader>z", desc = "Zen mode", icon = { icon = " ", color = "cyan" } },
@@ -119,18 +117,16 @@ return {
             { "<leader>y", desc = "Yank history", icon = { icon = " ", color = "purple" } },
 
             -- Live server
-            { "<leader>S", desc = "Live Server", icon = { icon = " ", color = "green" } },
+            { "<leader>ts", desc = "Live Server", icon = { icon = " ", color = "green" } },
 
             -- Copilot
-            { "<leader>O", desc = "Copilot", icon = { icon = " ", color = "orange" } },
-            { "<leader>Oe", desc = "Enable", icon = { icon = " ", color = "yellow" } },
-            { "<leader>Od", desc = "Disable", icon = { icon = " ", color = "yellow" } },
+            { "<leader>tC", desc = "Toggle Copilot", icon = { icon = " ", color = "cyan" } },
 
             -- Avante
             { "<leader>a", desc = "Avante (AI)", icon = { icon = "󰚩 ", color = "red" } },
 
             -- Render Markdown
-            { "<leader>M", desc = "Render Markdown", icon = { icon = " ", color = "cyan" } },
+            { "<leader>tM", desc = "Render Markdown", icon = { icon = " ", color = "cyan" } },
 
             -- Obsidian
             { "<leader>N", desc = "Obsidian", icon = { icon = " ", color = "green" } },
@@ -149,13 +145,16 @@ return {
             { "<leader>tc", desc = "Toggle Color Highlights", icon = { icon = "󰌁", color = "orange" } },
 
             -- Mini files
-            { "<leader>e", desc = "Mini files", icon = { icon = "󰲂", color = "yellow" } },
+            { "<leader>tm", desc = "Mini files", icon = { icon = "󰲂", color = "yellow" } },
 
             -- Nvim toggler
-            { "<leader>i", desc = "Toggle word", icon = { icon = "", color = "green" } },
+            { "<leader>tw", desc = "Toggle word", icon = { icon = "", color = "green" } },
 
             -- Pickers
             { "<leader>P", desc = "Pickers", icon = { icon = "󰉦", color = "purple" } },
+
+            -- Treesj
+            { "<leader>w", desc = "(Split / Join)", icon = { icon = " ", color = "yellow" } }
         })
 
         wk.setup({

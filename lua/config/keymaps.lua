@@ -1,8 +1,8 @@
---
+-----------------------------------------------------------
 --  HACK: Keymaps
---
+-----------------------------------------------------------
 
-local map = vim.keymap -- Keymaps
+local map = vim.keymap
 
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 map.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
@@ -101,34 +101,15 @@ map.set("v", "p", '"_dP', opts) -- Keep last yanked when pasting
 -----------------------------------------------------------
 --  INFO: Diagnostic
 -----------------------------------------------------------
-map.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })                   -- Previous Diagnostic
-map.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })                       -- Next Diagnostic
-map.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })                   -- Floating Diagnostic
-map.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })                              -- Diagnostic list
-map.set("n", "<leader>td", "<Cmd>lua require('tiny-inline-diagnostic').toggle()<CR>", { desc = "Toggle diagnostics" }) -- Toggle diagnostic
+map.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" }) -- Previous Diagnostic
+map.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })     -- Next Diagnostic
+map.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" }) -- Floating Diagnostic
+map.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })            -- Diagnostic list
 
 -----------------------------------------------------------
---  INFO: Neotree
+--  INFO: Clear search highlight
 -----------------------------------------------------------
-map.set("n", "<leader>n", "<Cmd>Neotree toggle<CR>", { desc = "Explorer Neotree (Toggle)" }) -- Toggle Neotree
-map.set("n", "<leader>e", function()
-    local MiniFiles = require("mini.files")
-    if not MiniFiles.close() then
-        MiniFiles.open()
-    end
-end) -- Toggle mini files
-
--- Search
 map.set("n", "<C-c>", "<Cmd>noh<CR>", opts)
-
------------------------------------------------------------
---  INFO: Telescope
------------------------------------------------------------
-local builtin = require("telescope.builtin")
-map.set("n", "<leader><space>", builtin.find_files) -- Telescope find files
-map.set("n", "<leader>G", builtin.live_grep)        -- Telescope live grep
-map.set("n", "<leader>bf", builtin.buffers)         -- Telescope buffers
-map.set("n", "<leader>h", builtin.help_tags)        -- Telescope help tags
 
 -----------------------------------------------------------
 --  INFO: Quit
@@ -143,26 +124,10 @@ map.set("n", "<C-q>", "<cmd> q <CR>", opts) -- Quit current
 map.set("n", "<leader>l", "<Cmd>Lazy<CR>", { desc = "Lazy" }) -- Call Lazy
 
 -----------------------------------------------------------
---  INFO: Mason
------------------------------------------------------------
-map.set("n", "<leader>m", "<Cmd>Mason<CR>") -- Call Mason
-
------------------------------------------------------------
 --  INFO: Deleting
 -----------------------------------------------------------
 map.set({ "n", "v" }, "<leader>x", '"_d') -- "Delete without copy it"
 map.set("n", "x", '"_x', opts)            -- Delete single character without copying into register
-
------------------------------------------------------------
---  INFO: TODO Comments
------------------------------------------------------------
-map.set("n", "]t", function()
-    require("todo-comments").jump_next() -- Next todo comment
-end, { desc = "Next todo comment" })
-
-map.set("n", "[t", function()
-    require("todo-comments").jump_prev() -- Previous todo comment
-end, { desc = "Previous todo comment" })
 
 -----------------------------------------------------------
 --  INFO: Projects
@@ -172,17 +137,6 @@ local projects = require("plugins.custom.projects")
 map.set("n", "<leader>p", function()
     projects.setup() -- Open projects folder
 end, { desc = "Projects" })
-
------------------------------------------------------------
---  INFO: Lorem Ipsum
------------------------------------------------------------
-map.set("n", "<leader>Lw", function()
-    vim.cmd("LoremIpsum words " .. vim.fn.input("Number of words")) -- Words
-end, { desc = "Words" })
-
-map.set("n", "<leader>Lp", function()
-    vim.cmd("LoremIpsum paragraphs " .. vim.fn.input("Number of paragraphs")) -- Paragraphs
-end, { desc = "Paragraphs" })
 
 -----------------------------------------------------------
 --  INFO: Comment Header
@@ -213,51 +167,10 @@ end, { desc = "Header 3" })
 map.set("n", "<leader>r", vim.lsp.buf.rename)
 
 -----------------------------------------------------------
---  INFO: Yanky
------------------------------------------------------------
-map.set("n", "<leader>y", ":YankyRingHistory<CR>")
-
------------------------------------------------------------
 --  INFO: Exit "insert" mode
 -----------------------------------------------------------
 map.set("i", "jj", "<Esc>", { noremap = false })
 map.set("i", "JJ", "<Esc>", { noremap = false })
-
------------------------------------------------------------
---  INFO: Live server
------------------------------------------------------------
-map.set("n", "<leader>S", ":LiveServerToggle<CR>")
-
------------------------------------------------------------
---  INFO: Copilot
------------------------------------------------------------
-map.set("i", "<S-Tab>", 'copilot#Accept("\\<CR>")', {
-    expr = true,
-    replace_keycodes = false,
-})
-vim.g.copilot_no_tab_map = true
-
-map.set("n", "<leader>Oe", ":Copilot enable<CR>", { desc = "Enable" })
-map.set("n", "<leader>Od", ":Copilot disable<CR>", { desc = "Disable" })
-
------------------------------------------------------------
---  INFO: Render Markdown
------------------------------------------------------------
-map.set("n", "<leader>M", ":RenderMarkdown toggle<CR>")
-
------------------------------------------------------------
---  INFO: Obsidian
------------------------------------------------------------
-map.set("n", "<leader>Nf", ":ObsidianFollowLink<CR>")
-map.set("n", "<leader>Nl", ":ObsidianLinks<CR>")
-map.set("n", "<leader>Nt", ":ObsidianTags<CR>")
-map.set("n", "<leader>Nb", ":ObsidianBacklinks<CR>")
-map.set("n", "<leader>Nc", ":ObsidianCheck<CR>")
-map.set("n", "<leader>No", ":ObsidianOpen<CR>")
-map.set("n", "<leader>Nr", ":ObsidianRename<CR>")
-map.set("n", "<leader>Ng", ":ObsidianSearch<CR>")
-map.set("n", "<leader>NT", ":ObsidianTOC<CR>")
-map.set("n", "<leader>Nw", ":ObsidianWorkspace<CR>")
 
 -----------------------------------------------------------
 --  INFO: Navigation in insert mode
@@ -272,88 +185,3 @@ map.set("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 -----------------------------------------------------------
 map.set("n", "<leader>Ps", ":Shades<CR>")
 map.set("n", "<leader>Ph", ":Huefy<CR>")
-
------------------------------------------------------------
---  INFO: Clear notifications
------------------------------------------------------------
-map.set("n", "<leader>`", function()
-    require("notify").dismiss()
-end, { desc = "Clear notifications" })
-
------------------------------------------------------------
---  INFO: Toggle color highlights
------------------------------------------------------------
-map.set('n', '<leader>tc', ":ColorizerToggle<CR>")
-
------------------------------------------------------------
---  INFO: Treesitter textobjects
------------------------------------------------------------
-local select = require("nvim-treesitter-textobjects.select")
-
-local function mapSelect(key, query, desc)
-    vim.keymap.set({ "x", "o" }, key, function()
-        select.select_textobject(query, "textobjects")
-    end, { desc = desc })
-end
-
--- === FUNCTIONS ===
-mapSelect("af", "@function.outer", "Select Around Function")
-mapSelect("if", "@function.inner", "Select Inside Function")
-
--- === CLASSES ===
-mapSelect("ac", "@class.outer", "Select Around Class")
-mapSelect("ic", "@class.inner", "Select Inside Class")
-
--- === ARGUMENTS / PARAMETERS ===
-mapSelect("aa", "@parameter.outer", "Select Around Arg")
-mapSelect("ia", "@parameter.inner", "Select Inside Arg")
-
--- === LOOPS / CONDITIONALS ===
-mapSelect("al", "@loop.outer", "Select Around Loop")
-mapSelect("il", "@loop.inner", "Select Inside Loop")
-
--- === BLOCKS (Curly Braces / Objects / Scopes) ===
-mapSelect("ab", "@block.outer", "Select Around Block/Object")
-mapSelect("ib", "@block.inner", "Select Inside Block/Object")
-
--- === MOVEMENT (Jumping) ===
-local move = require("nvim-treesitter-textobjects.move")
-
--- Helper to make mapping easier
--- fn is the move function (e.g., move.goto_next_start)
-local function map_move(key, fn, query, desc)
-    vim.keymap.set({ "n", "x", "o" }, key, function()
-        fn(query, "textobjects")
-    end, { desc = desc })
-end
-
--- 1. Functions
-map_move("]f", move.goto_next_start, "@function.outer", "Next Function Start")
-map_move("[f", move.goto_previous_start, "@function.outer", "Prev Function Start")
-
-map_move("]F", move.goto_next_end, "@function.outer", "Next Function End")
-map_move("[F", move.goto_previous_end, "@function.outer", "Prev Function End")
-
--- 2. Classes
-map_move("]c", move.goto_next_start, "@class.outer", "Next Class Start")
-map_move("[c", move.goto_previous_start, "@class.outer", "Prev Class Start")
-
--- 3. Arguments (Super useful!)
-map_move("]a", move.goto_next_start, "@parameter.inner", "Next Argument")
-map_move("[a", move.goto_previous_start, "@parameter.inner", "Prev Argument")
-
--- === LOGIC (If / Loops) ===
-map_move("]i", move.goto_next_start, "@conditional.outer", "Next If/Else")
-map_move("[i", move.goto_previous_start, "@conditional.outer", "Prev If/Else")
-
-map_move("]l", move.goto_next_start, "@loop.outer", "Next Loop")
-map_move("[l", move.goto_previous_start, "@loop.outer", "Prev Loop")
-
--- === RETURNS (Super Useful for Debugging) ===
-map_move("]r", move.goto_next_start, "@return.outer", "Next Return")
-map_move("[r", move.goto_previous_start, "@return.outer", "Prev Return")
-
--- === COMMENTS ===
--- Use / because it reminds you of searching
-map_move("]/", move.goto_next_start, "@comment.outer", "Next Comment")
-map_move("[/", move.goto_previous_start, "@comment.outer", "Prev Comment")

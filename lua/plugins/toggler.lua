@@ -1,15 +1,20 @@
 return {
-	"nguyenvukhang/nvim-toggler",
-	event = "VeryLazy",
+    "nguyenvukhang/nvim-toggler",
+    event = "VeryLazy",
 
-	config = function()
-		require("nvim-toggler").setup({
-			inverses = {
-				["vim"] = "emacs",
-				["left"] = "right",
-				["top"] = "bottom",
-				["open"] = "close",
-			},
-		})
-	end,
+    keys = {
+        { "<leader>tw", function() require("nvim-toggler").toggle() end },
+    },
+
+    config = function()
+        require("nvim-toggler").setup({
+            remove_default_keybinds = true,
+            inverses = {
+                ["vim"] = "emacs",
+                ["left"] = "right",
+                ["top"] = "bottom",
+                ["open"] = "close",
+            },
+        })
+    end,
 }

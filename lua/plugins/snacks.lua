@@ -251,7 +251,7 @@ return {
 █▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █
    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█
 	
- [ malick.dev ] ]],
+        [ malick.dev ] ]],
             },
             sections = {
                 { section = "header",  padding = 0, align = "left" },

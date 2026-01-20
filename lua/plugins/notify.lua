@@ -19,5 +19,13 @@ return {
             },
         })
         vim.notify = require("notify")
+
+        -----------------------------------------------------------
+        --  INFO: Keymaps
+        -----------------------------------------------------------
+
+        vim.keymap.set("n", "<leader>`", function()
+            require("notify").dismiss()
+        end, { desc = "Clear notifications" })
     end,
 }

@@ -1,4 +1,5 @@
 return {
-	"nvzone/minty",
-	cmd = { "Shades", "Huefy" },
+    "nvzone/minty",
+    dependencies = { "nvzone/volt" },
+    cmd = { "Shades", "Huefy" },
 }

@@ -75,6 +75,9 @@ return {
         "rachartier/tiny-inline-diagnostic.nvim",
         event = "LspAttach", -- Or `LspAttach`
         priority = 1000,     -- needs to be loaded in first
+        keys = {
+            { "<leader>td", "<Cmd>lua require('tiny-inline-diagnostic').toggle()<CR>", desc = "Toggle diagnostics" },
+        },
         config = function()
             require("tiny-inline-diagnostic").setup({
                 preset = "modern",

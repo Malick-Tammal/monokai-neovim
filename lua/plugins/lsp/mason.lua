@@ -6,6 +6,12 @@ return {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
 
+    --  INFO: Keymaps
+    keys = {
+        { "<leader>m", "<Cmd>Mason<CR>", desc = "Mason" }, -- Call Mason
+    },
+
+    --  INFO: Options
     config = function()
         local mason = require("mason")
 

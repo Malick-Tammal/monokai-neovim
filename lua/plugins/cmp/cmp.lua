@@ -32,23 +32,23 @@ return {
     event = "InsertEnter",
 
     dependencies = {
-        -- 1. Core Sources (You were missing cmp-nvim-lsp)
-        "hrsh7th/cmp-nvim-lsp", -- REQUIRED for LSP completion
+        -- Core Sources
+        "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-calc",
         "hrsh7th/cmp-emoji",
         "octaltree/cmp-look",
 
-        -- 2. Snippet Engine
+        -- Snippet Engine
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "rafamadriz/friendly-snippets",
 
-        -- 3. UI & Extras (You were missing the colorizer plugin repo)
+        -- UI & Extras
         "onsails/lspkind.nvim",
         "lukas-reineke/cmp-under-comparator",
-        "roobert/tailwindcss-colorizer-cmp.nvim", -- REQUIRED for the tailwind formatter
+        "roobert/tailwindcss-colorizer-cmp.nvim",
     },
 
     config = function()
@@ -83,54 +83,31 @@ return {
             },
 
             mapping = cmp.mapping.preset.insert({
+                -- ["<C-Space>"] = cmp.mapping.complete(),
+
                 ["<CR>"] = cmp.mapping.confirm({ select = true }),
+
                 ["<C-j>"] = cmp.mapping.select_next_item(),
                 ["<Tab>"] = cmp.mapping.select_next_item(),
+
                 ["<C-k>"] = cmp.mapping.select_prev_item(),
                 ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-Space>"] = cmp.mapping.complete(),
+
+                ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-n>"] = cmp.mapping.scroll_docs(4),
+
                 ["<C-d>"] = cmp.mapping.abort(),
             }),
 
             sources = cmp.config.sources({
-                { name = "luasnip" },
                 { name = "nvim_lsp" },
+                { name = "luasnip" },
                 { name = "buffer" },
                 { name = "path" },
                 { name = "calc" },
                 { name = "emoji" },
                 { name = "look",    keyword_length = 2 },
             }),
-
-            -- formatting = {
-            --     fields = { "kind", "abbr", "menu" },
-            --
-            --     -- Complex menu
-            --     -- format = function(entry, vim_item)
-            --     --     local kind_icon = lspkind.symbolic(vim_item.kind, { mode = "symbol" }) or ""
-            --     --     -- vim_item.kind = kind_icon
-            --     --     vim_item.kind = string.format("%s %s", kind_icon, vim_item.kind)
-            --     --     vim_item.abbr = " " .. vim_item.abbr -- two spaces; adjust as needed
-            --     --     vim_item.menu = ({
-            --     --         nvim_lsp = "[LSP]",
-            --     --         buffer = "[BUF]",
-            --     --         path = "[PATH]",
-            --     --         luasnip = "[SNIP]",
-            --     --     })[entry.source.name] or ""
-            --     --     return vim_item
-            --     -- end,
-            --
-            --     -- Simple menu
-            --     format = function(entry, vim_item)
-            --         local icon = lspkind.symbolic(vim_item.kind, { mode = "symbol" }) or ""
-            --         vim_item.kind = icon
-            --         vim_item.abbr = " " .. vim_item.abbr
-            --         vim_item = tailwind_formatter.formatter(entry, vim_item)
-            --         return vim_item
-            --     end,
-            -- },
 
             formatting = {
                 fields = { "kind", "abbr", "menu" },
@@ -166,8 +143,11 @@ return {
             },
 
             sorting = {
+                priority_weight = 2,
+
                 comparators = {
                     require("cmp-under-comparator").under,
+
                     cmp.config.compare.offset,
                     cmp.config.compare.exact,
                     cmp.config.compare.score,

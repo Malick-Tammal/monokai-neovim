@@ -13,13 +13,12 @@ return {
             },
         })
 
-        -- INFO: Keymaps
+        -----------------------------------------------------------
+        --  INFO: Keymaps
+        -----------------------------------------------------------
+
         vim.keymap.set("n", "<leader>w", function()
             require("treesj").toggle()
         end)
-
-        -- WK
-        local wk = require("which-key")
-        wk.add({ "<leader>w", desc = "(Split / Join)", icon = { icon = " ", color = "yellow" } })
     end,
 }

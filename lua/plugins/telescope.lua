@@ -1,33 +1,29 @@
 return {
-	"nvim-telescope/telescope.nvim",
-	-- tag = "0.1.8",
-	-- dependencies = {
-	-- 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	-- },
-	event = "VeryLazy",
+    "nvim-telescope/telescope.nvim",
+    event = "VeryLazy",
 
-	-- HACK: Config
-	config = function()
-		local tele = require("telescope")
-		tele.setup({
-			winblend = 10,
-			-- extensions = {
-			-- 	fzf = {},
-			-- },
-			-- pickers = {
-			-- 	find_files = {
-			-- 		find_command = { "rg", "--files", "--color", "never", "--no-require-git" },
-			-- 	},
-			-- },
-			defaults = {
-				prompt_prefix = "  ",
-				selection_caret = "  ",
-				path_display = { "smart" },
-				borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
-			},
-		})
+    --  INFO: Keymaps
+    keys = {
+        { "<leader><space>", "<Cmd>Telescope find_files<CR>", desc = "Telescope Find Files" },
+        { "<leader>G",       "<Cmd>Telescope live_grep<CR>",  desc = "Telescope Live Grep" },
+        { "<leader>bf",      "<Cmd>Telescope buffers<CR>",    desc = "Telescope Buffers" },
+        { "<leader>h",       "<Cmd>Telescope help_tags<CR>",  desc = "Telescope Help Tags" },
+    },
 
-		-- INFO: Extensions
-		-- tele.load_extension("fzf")
-	end,
+    --  INFO: Config
+    config = function()
+        local tele = require("telescope")
+        tele.setup({
+            winblend = 10,
+            defaults = {
+                prompt_prefix = "  ",
+                selection_caret = "  ",
+                path_display = { "smart" },
+                borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
+            },
+        })
+
+        --  TIP: Extensions
+        -- tele.load_extension("fzf")
+    end,
 }

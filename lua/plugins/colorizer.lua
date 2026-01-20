@@ -2,6 +2,10 @@ return {
     "catgoose/nvim-colorizer.lua",
     event = "BufReadPre",
 
+    keys = {
+        { "<leader>tc", "<Cmd>ColorizerToggle<CR>" }
+    },
+
     opts = {
         filetypes = {
             "*"
