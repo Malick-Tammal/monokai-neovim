@@ -13,6 +13,8 @@ return {
 
         sources = {
             "filesystem",
+            "buffers",
+            "git_status",
         },
 
         -- INFO: Showing realetive numbers
@@ -46,6 +48,7 @@ return {
                 ["<C-f>"] = { "scroll_preview", config = { direction = 10 } },
             },
         },
+
         filesystem = {
             bind_to_cwd = false,
             follow_current_file = { enabled = true },
@@ -90,7 +93,8 @@ return {
                         require("neo-tree.sources.manager").refresh(state.name)
                     end)
                 end,
-            }
+            },
+
         },
 
         default_component_configs = {
@@ -152,6 +156,7 @@ return {
                 expander_highlight = "NeoTreeExpander",
             },
         },
+
         renderers = {
             file = {
                 { "indent" },

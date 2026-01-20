@@ -33,18 +33,24 @@ return {
             })
 
             vim.lsp.config("emmet_ls", {
-                filetypes = { "html", "css", "scss", "javascriptreact", "typescriptreact", "svelte", "vue" },
+                filetypes = {
+                    "html",
+                    "css",
+                    "scss",
+                    "javascriptreact",
+                    "typescriptreact",
+                    "svelte",
+                    "vue",
+                    "javascript",
+                    "typescript",
+                },
                 showSuggestionsAsSnippets = true,
             })
 
             vim.lsp.config("qmlls", {
                 cmd = { "qmlls", "-E" },
                 filetypes = { "qml", "qmljs" },
-                -- Ensure Neovim sees your project folder
                 root_markers = { ".qmlls.ini", "shell.qml", ".git" },
-                settings = {
-                    -- Optional: specific qmlls tweaks
-                }
             })
 
             -- INFO: LSPs activation

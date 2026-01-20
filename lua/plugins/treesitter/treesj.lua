@@ -9,7 +9,6 @@ return {
             max_join_length = 300,
             use_default_keymaps = false,
             langs = {
-                -- Instead of requiring the whole module, we inherit the JS preset
                 qmljs = require('treesj.langs.javascript'),
             },
         })

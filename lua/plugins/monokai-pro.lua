@@ -1,3 +1,49 @@
+--  INFO: Settings custom color foe "nvim-cmp"
+local lspkind = function(c)
+    local kind_colors = {
+        Text = c.editor.foreground,
+        Method = c.base.cyan,
+        Function = c.base.magenta,
+        Constructor = c.base.yellow,
+        Field = c.base.red,
+        Variable = c.base.red,
+        Class = c.base.yellow,
+        Interface = c.base.green,
+        Module = c.base.cyan,
+        Property = c.base.ctan,
+        Unit = c.base.dimmed2,
+        Value = c.base.blue,
+        Enum = c.base.yellow,
+        Keyword = c.base.magenta,
+        Snippet = c.base.green,
+        Color = c.base.blue,
+        File = c.base.dimmed2,
+        Reference = c.base.dimmed2,
+        Folder = c.base.cyan,
+        EnumMember = c.base.cyan,
+        Constant = c.base.blue,
+        Struct = c.base.blue,
+        Event = c.base.red,
+        Operator = c.base.dimmed2,
+        TypeParameter = c.base.yellow,
+    }
+
+    vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "*",
+        callback = function()
+            for kind, color in pairs(kind_colors) do
+                -- "CmpItemKind" + "Function" = "CmpItemKindFunction"
+                vim.api.nvim_set_hl(0, "CmpItemKind" .. kind, { fg = color, force = true })
+            end
+        end,
+    })
+
+    for kind, color in pairs(kind_colors) do
+        vim.api.nvim_set_hl(0, "CmpItemKind" .. kind, { fg = color, force = true })
+    end
+end
+
+
 return {
     "loctvl842/monokai-pro.nvim",
     lazy = false,
@@ -15,6 +61,7 @@ return {
 
             --  TIP: Custom highlights
             override = function(c)
+                lspkind(c)
                 return {
                     BufferLineIndicatorSelected = { bg = c.base.blue, fg = c.base.dark },
                     BufferLineNeoTree = { bg = c.base.dark, fg = c.base.dimmed3 },
@@ -29,7 +76,7 @@ return {
                         fg = c.tab.inactiveForeground,
                     },
 
-                    -- print(vim.inspect(c))
+                    -- print(vim.inspect(c)),
 
                     -- Telescope
                     TelescopeNormal = { bg = c.base.black },
@@ -51,15 +98,11 @@ return {
                     -- Cmp ( Completion menu )
                     CmpPmenu = { bg = c.base.dark, fg = c.base.dimmed1 },
                     CmpDocNormal = { bg = c.base.dark, fg = c.base.dimmed1 },
+                    CmpItemMenu = { fg = c.base.dimmed3 },
 
-                    PmenuSel = { bg = c.base.blue, fg = c.base.dark },
+                    PmenuSel = { bg = c.base.yellow, fg = c.base.dark },
 
-                    CmpItemKindSnippet = { fg = c.base.red },
-                    CmpItemKindFunction = { fg = c.base.magenta },
-                    CmpItemKindVariable = { fg = c.base.yellow },
-                    CmpItemKindText = { fg = c.base.green },
-
-                    -- vim.api.nvim_set_hl(0, "CmpMenuBorder", { bg = "none" })
+                    CmpMenuBorder = { bg = "none", fg = c.base.dimmed3 },
 
                     BlinkCmpMenu = { bg = c.base.black, fg = c.base.dimmed1 },
                     BlinkCmpMenuSelection = { bg = c.base.blue, fg = c.base.dark },
@@ -71,11 +114,11 @@ return {
 
                     -- Highlight relative number
                     CursorLineNr = { fg = c.base.yellow },
-                    CursorLine = { bg = c.base.dimmed5 },
+                    CursorLine = { bg = c.base.gray },
 
                     -- Indent line and highlight active
-                    -- SnacksIndent = { fg = c.base.dimmed3 },
                     SnacksIndentScope = { fg = c.base.green },
+                    SnacksIndent = { fg = c.base.dimmed5 },
 
                     -- Notify
                     NotifyINFOBody = { bg = c.editor.background },
@@ -86,8 +129,8 @@ return {
                     NotifyWARNBorder = { bg = c.editor.background, fg = c.base.yellow },
 
                     -- Yanky
-                    YankyYanked = { bg = c.base.red, fg = c.base.dark },
-                    YankyPut = { bg = c.yellow, fg = c.base.dark },
+                    YankyYanked = { bg = c.base.blue, fg = c.base.dark },
+                    YankyPut = { bg = c.base.yellow, fg = c.base.dark },
 
                     -- Mini icons
                     MiniIconsAzure = { fg = c.base.cyan },
@@ -111,7 +154,6 @@ return {
                     SnacksPickerDirectory = { fg = c.base.dimmed2, bg = "none" },
 
                     SnacksPickerInputTitle = { fg = c.base.red, bg = c.base.blue },
-                    SnacksIndent = { fg = c.base.dimmed3 },
                     SnacksDashboardText = { fg = c.base.dimmed2 },
 
                     -- Mini files

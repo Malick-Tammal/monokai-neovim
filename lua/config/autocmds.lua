@@ -30,14 +30,6 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
     group = vim.api.nvim_create_augroup("NoiceMacroNotficationDismiss", { clear = true }),
 })
 
--- vim.api.nvim_create_autocmd("BufWritePost", {
--- 	pattern = "*",
--- 	callback = function()
--- 		vim.api.nvim_echo({ { "File written successfully: " .. vim.fn.expand("%:p"), "Normal" } }, false, {})
--- 	end,
--- })
---
-
 -----------------------------------------------------------
 --  INFO: Open help window in vertical split
 -----------------------------------------------------------
@@ -71,16 +63,5 @@ vim.api.nvim_create_autocmd("BufRead", {
     pattern = { ".env", ".env.*" },
     callback = function()
         vim.bo.filetype = "dosini"
-    end,
-})
-
-
--- Simple fix: Force Tree-sitter colors to win over LSP
-vim.api.nvim_create_autocmd("LspAttach", {
-    callback = function(args)
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
-        if client then
-            client.server_capabilities.semanticTokensProvider = nil
-        end
     end,
 })
