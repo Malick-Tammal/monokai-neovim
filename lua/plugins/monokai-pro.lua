@@ -46,6 +46,7 @@ end
 
 return {
     "loctvl842/monokai-pro.nvim",
+    cond = not vim.g.vscode,
     lazy = false,
     priority = 9999,
 

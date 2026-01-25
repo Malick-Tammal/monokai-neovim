@@ -8,9 +8,7 @@ return {
         treesj.setup({
             max_join_length = 300,
             use_default_keymaps = false,
-            langs = {
-                qmljs = require('treesj.langs.javascript'),
-            },
+            langs = { qmljs = require('treesj.langs.javascript') },
         })
 
         -----------------------------------------------------------

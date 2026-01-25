@@ -3,19 +3,21 @@ return {
     event = "VeryLazy",
     version = "*",
 
-    keys = {
-        {
-            "<leader>tm",
-            function()
-                local MiniFiles = require("mini.files")
-                if not MiniFiles.close() then MiniFiles.open() end
-            end,
-        },
-    },
+    keys = function()
+        if vim.g.vscode then return {} end
+        return {
+            {
+                "<leader>tm",
+                function()
+                    local MiniFiles = require("mini.files")
+                    if not MiniFiles.close() then MiniFiles.open() end
+                end,
+                desc = "Open Mini Files"
+            },
+        }
+    end,
 
     config = function()
-        require("mini.bufremove").setup()
-        require("mini.comment").setup()
         require("mini.surround").setup({
             silent = true,
             mappings = {
@@ -43,17 +45,19 @@ return {
             },
         })
 
-        require("mini.files").setup({
-            windows = {
-                preview = true,
-                width_preview = 80,
-
-            },
-            options = {
-                permanent_delete = false,
-            }
-        })
-
         require("mini.operators").setup()
+
+        -- 3. Terminal-Only Modules (Disable in VS Code)
+        if not vim.g.vscode then
+            require("mini.bufremove").setup()
+            require("mini.comment").setup()
+            require("mini.files").setup({
+                windows = {
+                    preview = true,
+                    width_preview = 80,
+                },
+                options = { permanent_delete = false }
+            })
+        end
     end,
 }

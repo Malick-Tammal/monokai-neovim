@@ -1,4 +1,5 @@
 return {
-	"sitiom/nvim-numbertoggle",
-	event = "InsertEnter",
+    "sitiom/nvim-numbertoggle",
+    cond = not vim.g.vscode,
+    event = "InsertEnter",
 }

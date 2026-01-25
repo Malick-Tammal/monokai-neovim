@@ -1,5 +1,6 @@
 return {
     "catgoose/nvim-colorizer.lua",
+    cond = not vim.g.vscode,
     event = "BufReadPre",
 
     keys = {

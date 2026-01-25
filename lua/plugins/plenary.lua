@@ -1,4 +1,5 @@
 return {
-	"nvim-lua/plenary.nvim",
-	event = "VeryLazy",
+    "nvim-lua/plenary.nvim",
+    cond = not vim.g.vscode,
+    event = "VeryLazy",
 }

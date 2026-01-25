@@ -1,5 +1,6 @@
 return {
     "nguyenvukhang/nvim-toggler",
+    cond = not vim.g.vscode,
     event = "VeryLazy",
 
     keys = {

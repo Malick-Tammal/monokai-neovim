@@ -1,5 +1,6 @@
 return {
     "nvimdev/lspsaga.nvim",
+    cond = not vim.g.vscode,
     event = "LspAttach",
     config = function()
         require("lspsaga").setup({

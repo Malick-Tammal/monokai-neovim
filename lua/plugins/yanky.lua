@@ -1,5 +1,6 @@
 return {
     "gbprod/yanky.nvim",
+    cond = not vim.g.vscode,
     event = { "BufReadPre", "BufNewFile" },
 
     keys = {

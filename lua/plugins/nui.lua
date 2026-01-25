@@ -1,4 +1,5 @@
 return {
-	"MunifTanjim/nui.nvim",
-	event = "VeryLazy",
+    "MunifTanjim/nui.nvim",
+    cond = not vim.g.vscode,
+    event = "VeryLazy",
 }

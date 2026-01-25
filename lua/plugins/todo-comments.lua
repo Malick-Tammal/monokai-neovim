@@ -1,7 +1,7 @@
 return {
     "folke/todo-comments.nvim",
+    cond = not vim.g.vscode,
     event = { "BufReadPre", "BufNewFile" },
-
 
     --  INFO: Keymaps
     keys = {

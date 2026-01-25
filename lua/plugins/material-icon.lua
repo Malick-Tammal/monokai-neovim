@@ -1,4 +1,5 @@
 return {
-	"DaikyXendo/nvim-material-icon",
-	event = { "BufReadPre", "BufNewFile" },
+    "DaikyXendo/nvim-material-icon",
+    cond = not vim.g.vscode,
+    event = { "BufReadPre", "BufNewFile" },
 }

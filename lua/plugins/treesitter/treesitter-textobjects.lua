@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    cond = not vim.g.vscode,
     branch = "main",
     event = { "BufReadPre", "BufNewFile" },
 

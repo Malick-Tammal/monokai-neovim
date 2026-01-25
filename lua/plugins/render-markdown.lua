@@ -1,5 +1,6 @@
 return {
     "MeanderingProgrammer/render-markdown.nvim",
+    cond = not vim.g.vscode,
     event = { "BufReadPre", "BufNewFile" },
     ft = { "markdown", "Avante" },
 

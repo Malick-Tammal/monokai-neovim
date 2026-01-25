@@ -1,5 +1,6 @@
 return {
     "nvim-telescope/telescope.nvim",
+    cond = not vim.g.vscode,
     event = "VeryLazy",
 
     --  INFO: Keymaps
