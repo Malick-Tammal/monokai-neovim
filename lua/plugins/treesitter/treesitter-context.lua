@@ -1,13 +1,14 @@
 return {
-    "nvim-treesitter/nvim-treesitter-context",
-    cond = not vim.g.vscode,
-    lazy = false,
+	"nvim-treesitter/nvim-treesitter-context",
+	cond = not vim.g.vscode,
+	lazy = false,
+	enabled = false,
 
-    config = function()
-        require("treesitter-context").setup({
-            enable = true,
-            max_lines = 0,
-            trim_scope = 'outer',
-        })
-    end
+	config = function()
+		require("treesitter-context").setup({
+			enable = true,
+			max_lines = 0,
+			trim_scope = "outer",
+		})
+	end,
 }
