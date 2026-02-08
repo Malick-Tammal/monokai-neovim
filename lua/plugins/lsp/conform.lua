@@ -17,6 +17,7 @@ return {
 
 				-- INFO: Config
 				lua = { "stylua" },
+				luau = { "stylua" },
 				toml = { "taplo" },
 				bash = { "shfmt" },
 				sh = { "shfmt" },

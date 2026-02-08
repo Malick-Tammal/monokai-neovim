@@ -100,7 +100,8 @@ return {
 				MiniIconsYellow = { fg = c.base.yellow },
 
 				-- Folded text
-				Folded = { fg = c.base.yellow, bg = c.base.dimmed5 },
+				Folded = { fg = c.base.yellow, bg = c.base.dimmed4 },
+				SnacksDim = { fg = c.base.dimmed3, bg = "NONE", underline = false, undercurl = false },
 
 				-- Scrollbar
 				FloatTitle = { fg = c.base.red, bg = c.base.dimmed4 },

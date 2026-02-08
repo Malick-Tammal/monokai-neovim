@@ -14,31 +14,31 @@ local opts = { noremap = true, silent = true }
 --  INFO: Code (file) actions
 -----------------------------------------------------------
 local function message(msg, icon)
-    local file = vim.fn.expand("%:t")
-    return icon .. file .. msg
+	local file = vim.fn.expand("%:t")
+	return icon .. file .. msg
 end
 
 map.set("n", "<leader>cs", function()
-    vim.cmd("w") -- Save
+	vim.cmd("w") -- Save
 end, opts)
 
 map.set("n", "<C-s>", function()
-    vim.cmd("w") -- Save 2
+	vim.cmd("w") -- Save 2
 end, opts)
 
 map.set("n", "<leader>cn", function()
-    vim.cmd("noautocmd w") -- Save without format
+	vim.cmd("noautocmd w") -- Save without format
 end, opts)
 
 map.set({ "n" }, "<leader>cf", function()
-    require("conform").format({
-        lsp_fallback = true,
-        async = true,
-        timeout_ms = 500,
-    })
-    vim.notify(message(" Formatted!", " 󰆓 "), "", {
-        title = "VIM",
-    })
+	require("conform").format({
+		lsp_fallback = true,
+		async = true,
+		timeout_ms = 500,
+	})
+	vim.notify(message(" Formatted!", " 󰆓 "), "", {
+		title = "VIM",
+	})
 end)
 
 -----------------------------------------------------------
@@ -61,14 +61,14 @@ map.set("n", "<Right>", ":vertical resize +2<CR>", opts)
 map.set("n", "<Tab>", ":bnext<CR>", opts)
 map.set("n", "<S-Tab>", ":bprevious<CR>", opts)
 map.set("n", "<leader>bx", ":lua MiniBufremove.delete()<CR>", opts) -- close buffer
-map.set("n", "<leader>bb", "<cmd> enew <CR>", opts)                 -- new buffer
+map.set("n", "<leader>bb", "<cmd> enew <CR>", opts) -- new buffer
 
 -----------------------------------------------------------
 --  INFO: Split
 -----------------------------------------------------------
-map.set("n", "<leader>sv", "<C-w>v", opts)     -- split window vertically
-map.set("n", "<leader>sh", "<C-w>s", opts)     -- split window horizontally
-map.set("n", "<leader>se", "<C-w>=", opts)     -- make split windows equal width & height
+map.set("n", "<leader>sv", "<C-w>v", opts) -- split window vertically
+map.set("n", "<leader>sh", "<C-w>s", opts) -- split window horizontally
+map.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
 map.set("n", "<leader>sx", ":close<CR>", opts) -- close current split window
 
 -----------------------------------------------------------
@@ -82,10 +82,10 @@ map.set("n", "<leader>sx", ":close<CR>", opts) -- close current split window
 -----------------------------------------------------------
 --  INFO: Tabs
 -----------------------------------------------------------
-map.set("n", "<leader>To", ":tabnew<CR>", opts)   -- open new tab
+map.set("n", "<leader>To", ":tabnew<CR>", opts) -- open new tab
 map.set("n", "<leader>Tx", ":tabclose<CR>", opts) -- close current tab
-map.set("n", "<leader>Tn", ":tabn<CR>", opts)     --  go to next tab
-map.set("n", "<leader>Tp", ":tabp<CR>", opts)     --  go to previous tab
+map.set("n", "<leader>Tn", ":tabn<CR>", opts) --  go to next tab
+map.set("n", "<leader>Tp", ":tabp<CR>", opts) --  go to previous tab
 
 -----------------------------------------------------------
 --  INFO: Indent lines
@@ -102,9 +102,9 @@ map.set("v", "p", '"_dP', opts) -- Keep last yanked when pasting
 --  INFO: Diagnostic
 -----------------------------------------------------------
 map.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" }) -- Previous Diagnostic
-map.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })     -- Next Diagnostic
+map.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" }) -- Next Diagnostic
 map.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" }) -- Floating Diagnostic
-map.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })            -- Diagnostic list
+map.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" }) -- Diagnostic list
 
 -----------------------------------------------------------
 --  INFO: Clear search highlight
@@ -114,8 +114,8 @@ map.set("n", "<C-c>", "<Cmd>noh<CR>", opts)
 -----------------------------------------------------------
 --  INFO: Quit
 -----------------------------------------------------------
-map.set("n", "<leader>qq", "<Cmd>qa<CR>")   -- Quit without saving!
-map.set("n", "<leader>qw", "<Cmd>xa<CR>")   -- Quit and save
+map.set("n", "<leader>qq", "<Cmd>qa<CR>") -- Quit without saving!
+map.set("n", "<leader>qw", "<Cmd>xa<CR>") -- Quit and save
 map.set("n", "<C-q>", "<cmd> q <CR>", opts) -- Quit current
 
 -----------------------------------------------------------
@@ -127,7 +127,7 @@ map.set("n", "<leader>l", "<Cmd>Lazy<CR>", { desc = "Lazy" }) -- Call Lazy
 --  INFO: Deleting
 -----------------------------------------------------------
 map.set({ "n", "v" }, "<leader>x", '"_d') -- "Delete without copy it"
-map.set("n", "x", '"_x', opts)            -- Delete single character without copying into register
+map.set("n", "x", '"_x', opts) -- Delete single character without copying into register
 
 -----------------------------------------------------------
 --  INFO: Projects
@@ -135,7 +135,7 @@ map.set("n", "x", '"_x', opts)            -- Delete single character without cop
 local projects = require("plugins.custom.projects")
 
 map.set("n", "<leader>p", function()
-    projects.setup() -- Open projects folder
+	projects.setup() -- Open projects folder
 end, { desc = "Projects" })
 
 -----------------------------------------------------------
@@ -144,21 +144,21 @@ end, { desc = "Projects" })
 local inscom = require("plugins.custom.inscom")
 
 map.set("n", "<leader>C1", function()
-    inscom.setup({
-        style = "style-1", -- style 1
-    })
+	inscom.setup({
+		style = "style-1", -- style 1
+	})
 end, { desc = "Header 1" })
 
 map.set("n", "<leader>C2", function()
-    inscom.setup({
-        style = "style-2", -- style 2
-    })
+	inscom.setup({
+		style = "style-2", -- style 2
+	})
 end, { desc = "Header 2" })
 
 map.set("n", "<leader>C3", function()
-    inscom.setup({
-        style = "style-3", -- style 3
-    })
+	inscom.setup({
+		style = "style-3", -- style 3
+	})
 end, { desc = "Header 3" })
 
 -----------------------------------------------------------
@@ -185,3 +185,22 @@ map.set("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 -----------------------------------------------------------
 map.set("n", "<leader>Ps", ":Shades<CR>")
 map.set("n", "<leader>Ph", ":Huefy<CR>")
+
+-----------------------------------------------------------
+--  INFO: Snacks
+-----------------------------------------------------------
+map.set("n", "<leader>gl", function()
+	Snacks.lazygit()
+end)
+
+map.set("n", "<leader>z", function()
+	Snacks.zen()
+end)
+
+map.set("n", "<leader>cd", function()
+	Snacks.dim()
+end)
+
+map.set("n", "<leader>cD", function()
+	Snacks.dim.disable()
+end)

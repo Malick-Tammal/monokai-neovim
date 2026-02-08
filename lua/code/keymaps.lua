@@ -1,11 +1,11 @@
 local keymap = vim.keymap.set
-local vscode = require('vscode-neovim')
+local vscode = require("vscode-neovim")
 
 -- Helper: Call VS Code commands efficiently
 local function action(cmd)
-    return function()
-        vscode.call(cmd)
-    end
+	return function()
+		vscode.call(cmd)
+	end
 end
 
 keymap({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
@@ -32,18 +32,18 @@ keymap("n", "<leader>o", action("workbench.action.closeOtherEditors"), opts) -- 
 
 -- 1. Sidebar Toggles
 keymap("n", "<leader>e", action("workbench.action.toggleSidebarVisibility")) -- File Explorer
-keymap("n", "<leader>a", action("workbench.action.toggleAuxiliaryBar"))      -- AI Agent / Outline
+keymap("n", "<leader>a", action("workbench.action.toggleAuxiliaryBar")) -- AI Agent / Outline
 
 -- 2. Finding Files (Telescope Replacement)
 keymap("n", "<leader><leader>", action("workbench.action.quickOpen")) -- Ctrl+P (Find File)
-keymap("n", "<leader>fw", action("workbench.action.findInFiles"))     -- Grep (Find in Project)
-keymap("n", "<leader>fd", action("workbench.action.showAllSymbols"))  -- Find Symbol
+keymap("n", "<leader>fw", action("workbench.action.findInFiles")) -- Grep (Find in Project)
+keymap("n", "<leader>fd", action("workbench.action.showAllSymbols")) -- Find Symbol
 
 -- 3. Code Actions (LSP)
 keymap("n", "gd", action("editor.action.revealDefinition")) -- Go to Definition
-keymap("n", "gr", action("editor.action.goToReferences"))   -- Go to References
-keymap("n", "<leader>r", action("editor.action.rename"))    -- Rename Symbol
-keymap("n", "K", action("editor.action.showHover"))         -- Hover Documentation
+keymap("n", "gr", action("editor.action.goToReferences")) -- Go to References
+keymap("n", "<leader>r", action("editor.action.rename")) -- Rename Symbol
+keymap("n", "K", action("editor.action.showHover")) -- Hover Documentation
 
 -----------------------------------------------------------
 --  INFO: Utility
@@ -60,10 +60,10 @@ keymap("n", "<leader>R", action("vscode-neovim.restart"))
 
 -- Treesj Toggle
 vim.keymap.set("n", "<leader>w", function()
-    local status, treesj = pcall(require, "treesj")
-    if status then
-        treesj.toggle()
-    else
-        vim.cmd("normal! J")
-    end
+	local status, treesj = pcall(require, "treesj")
+	if status then
+		treesj.toggle()
+	else
+		vim.cmd("normal! J")
+	end
 end, { desc = "Surgical Split/Join" })

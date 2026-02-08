@@ -1,65 +1,65 @@
 return {
-    "williamboman/mason.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-        "williamboman/mason-lspconfig.nvim",
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-    },
+	"williamboman/mason.nvim",
+	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+	},
 
-    --  INFO: Keymaps
-    keys = {
-        { "<leader>m", "<Cmd>Mason<CR>", desc = "Mason" }, -- Call Mason
-    },
+	--  INFO: Keymaps
+	keys = {
+		{ "<leader>m", "<Cmd>Mason<CR>", desc = "Mason" }, -- Call Mason
+	},
 
-    --  INFO: Options
-    config = function()
-        local mason = require("mason")
+	--  INFO: Options
+	config = function()
+		local mason = require("mason")
 
-        -- import mason-lspconfig
-        local mason_lspconfig = require("mason-lspconfig")
+		-- import mason-lspconfig
+		local mason_lspconfig = require("mason-lspconfig")
 
-        local mason_tool_installer = require("mason-tool-installer")
+		local mason_tool_installer = require("mason-tool-installer")
 
-        -- UI
-        mason.setup({
-            ui = {
-                border = "rounded",
-                icons = {
-                    package_installed = "✓",
-                    package_pending = "➜",
-                    package_uninstalled = "✗",
-                },
-            },
-        })
+		-- UI
+		mason.setup({
+			ui = {
+				border = "rounded",
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
+		})
 
-        -- LSPs
-        mason_lspconfig.setup({
-            ensure_installed = {
-                "lua_ls",
-                "ts_ls",
-                "cssls",
-                "emmet_ls",
-                "jsonls",
-                "html",
-                "rust_analyzer",
-                "tailwindcss",
-                "bashls",
-                "hyprls",
-                "qmlls",
-            },
-            automatic_enable = false,
-        })
+		-- LSPs
+		mason_lspconfig.setup({
+			ensure_installed = {
+				"lua_ls",
+				"ts_ls",
+				"cssls",
+				"emmet_ls",
+				"jsonls",
+				"html",
+				"rust_analyzer",
+				"tailwindcss",
+				"bashls",
+				"hyprls",
+				"qmlls",
+			},
+			automatic_enable = false,
+		})
 
-        -- Formatters
-        mason_tool_installer.setup({
-            ensure_installed = {
-                "prettier",
-                "prettierd",
-                "stylua",
-                "shfmt",
-                "beautysh",
-                "taplo",
-            },
-        })
-    end,
+		-- Formatters
+		mason_tool_installer.setup({
+			ensure_installed = {
+				"prettier",
+				"prettierd",
+				"stylua",
+				"shfmt",
+				"beautysh",
+				"taplo",
+			},
+		})
+	end,
 }

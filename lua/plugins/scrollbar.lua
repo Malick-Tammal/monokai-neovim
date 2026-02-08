@@ -2,6 +2,7 @@ return {
 	"petertriho/nvim-scrollbar",
 	cond = not vim.g.vscode,
 	event = "VeryLazy",
+	enabled = true,
 
 	config = function()
 		require("scrollbar").setup({

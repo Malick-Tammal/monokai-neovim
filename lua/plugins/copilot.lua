@@ -1,43 +1,44 @@
 return {
-    "zbirenbaum/copilot.lua",
-    cond = not vim.g.vscode,
-    cmd = "Copilot",
-    event = "InsertEnter",
+	"zbirenbaum/copilot.lua",
+	cond = not vim.g.vscode,
+	cmd = "Copilot",
+	event = "InsertEnter",
+	enabled = false,
 
-    keys = {
-        { "<leader>tC", "<Cmd>Copilot toggle<CR>" },
-    },
+	keys = {
+		{ "<leader>tC", "<Cmd>Copilot toggle<CR>" },
+	},
 
-    config = function()
-        require("copilot").setup({
-            suggestion = {
-                enabled = true,
-                auto_trigger = true,
-                keymap = {
-                    accept = "<M-k>",
-                    accept_word = false,
-                    accept_line = false,
-                    next = "<M-]>",
-                    prev = "<M-[>",
-                    dismiss = "<C-]>",
-                },
-            },
+	config = function()
+		require("copilot").setup({
+			suggestion = {
+				enabled = true,
+				auto_trigger = true,
+				keymap = {
+					accept = "<M-k>",
+					accept_word = false,
+					accept_line = false,
+					next = "<M-]>",
+					prev = "<M-[>",
+					dismiss = "<C-]>",
+				},
+			},
 
-            panel = {
-                enabled = true,
-                auto_refresh = false,
-                keymap = {
-                    jump_prev = "[[",
-                    jump_next = "]]",
-                    accept = "<CR>",
-                    refresh = "gr",
-                    open = "<M-CR>"
-                },
-                layout = {
-                    position = "bottom",
-                    ratio = 0.4
-                },
-            },
-        })
-    end,
+			panel = {
+				enabled = true,
+				auto_refresh = false,
+				keymap = {
+					jump_prev = "[[",
+					jump_next = "]]",
+					accept = "<CR>",
+					refresh = "gr",
+					open = "<M-CR>",
+				},
+				layout = {
+					position = "bottom",
+					ratio = 0.4,
+				},
+			},
+		})
+	end,
 }

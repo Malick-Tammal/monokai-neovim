@@ -30,6 +30,7 @@ return {
 						},
 					},
 				},
+				filetypes = { "lua", "luau" },
 			})
 
 			vim.lsp.config("emmet_ls", {
