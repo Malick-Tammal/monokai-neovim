@@ -172,8 +172,6 @@ return {
 		renderers = {
 			file = {
 				{ "indent" },
-				{ "modified", zindex = 20, align = "right" },
-				{ "diagnostics", zindex = 20, align = "right" },
 				{ "icon" },
 				{
 					"container",
@@ -187,6 +185,8 @@ return {
 							zindex = 10,
 							highlight = "NeoTreeSymbolicLinkTarget",
 						},
+						{ "modified", zindex = 20, align = "right" },
+						-- { "diagnostics", zindex = 20, align = "right" },
 						{ "clipboard", zindex = 10 },
 						{ "bufnr", zindex = 10 },
 						{ "git_status", zindex = 10, align = "right" },
