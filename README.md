@@ -1,15 +1,18 @@
-# 🍂 Monokai Neovim config
+# Monokai Neovim
 
 This is my personal Neovim setup, extracted from my main dotfiles for modularity.
-Created for web development mainly and software development using rust "Tauri" and javascript "Electron"
+Created for web development mainly and software development secondary
 
 ### 🖼️ Preview
 
-![Neovim homepage](./assets/20260101_222257.webp)
-![Neovim code](./assets/20260101_222321.webp)
-![Neovim neotree](./assets/20260101_222429.webp)
-![Neovim mason](./assets/20260101_222441.webp)
-![Neovim projects picker](./assets/20260101_222459.webp)
+![Neovim dashboard](./preview/1.webp)
+![Neovim editor](./preview/2.webp)
+![Neovim editor2](./preview/3.webp)
+![Neovim telescope](./preview/4.webp)
+![Neovim lazyvim](./preview/5.webp)
+![Neovim mason](./preview/6.webp)
+![Neovim wichkey](./preview/7.webp)
+![Neovim project picker](./preview/8.webp)
 
 ### 🔗 Links
 
@@ -29,6 +32,7 @@ Created for web development mainly and software development using rust "Tauri" a
 - rust
 - bash / zsh
 - hyprls
+- qmlls
 
 ### Formatters
 
