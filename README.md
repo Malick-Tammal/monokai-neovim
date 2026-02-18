@@ -1,7 +1,7 @@
 # Monokai Neovim
 
-This is my personal Neovim setup, extracted from my main dotfiles for modularity.
-Created for web development mainly and software development secondary
+This is my personal Neovim config ( clean and produactive )</br>
+made for web development mainly and software development secondary
 
 ### 🖼️ Preview
 
