@@ -7,7 +7,7 @@ made for web development mainly and software development secondary
 
 </br>
 
-<div align="center" style="display: flex; justify-content: space-evenly;">
+<div align="center" style="display: flex; gap: 10px;">
   <a href="https://dotfyle.com/Malick-Tammal/monokai-neovim">
     <img src="https://img.shields.io/badge/Plugins-50-FFD866?style=for-the-badge&labelColor=282922" />
   </a>
