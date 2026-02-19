@@ -1,9 +1,9 @@
-<center><h1> * Monokai Neovim * </h1></center>
+<div align="center"><h1> * Monokai Neovim * </h1></div>
 
-<center>
+<div align="center">
 This is my personal Neovim config ( clean and produactive )</br>
 made for web development mainly and software development secondary
-</center>
+</div>
 
 </br>
 
@@ -27,11 +27,11 @@ made for web development mainly and software development secondary
 
 ---
 
-<center>
+<div align="center">
 
 ## - Previews -
 
-</center>
+</div>
 
 Welcome page (snacks dashboard)
 
@@ -65,11 +65,11 @@ Project picker (I made it to easy hook up to project)
 
 ![Neovim project picker](./preview/8.webp)
 
-<center>
+<div align="center">
 
 ## - Features -
 
-</center>
+</div>
 
 ### LSPs :
 
@@ -105,11 +105,11 @@ Project picker (I made it to easy hook up to project)
 
 and more ...
 
-<center>
+<div align="center">
 
 ## - Plugins -
 
-</center>
+</div>
 
 ### ai :
 
@@ -248,11 +248,11 @@ and more ...
 
 - [roobert/tailwindcss-colorizer-cmp.nvim](https://dotfyle.com/plugins/roobert/tailwindcss-colorizer-cmp.nvim)
 
-<center>
+<div align="center">
 
 ## - Installations -
 
-</center>
+</div>
 
 quick install :
 
