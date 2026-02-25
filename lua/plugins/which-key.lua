@@ -26,7 +26,7 @@ return {
 			{ "<leader>t", group = "Toggles", icon = { icon = "", color = "yellow" } },
 
 			-- Neotree
-			{ "<leader>tn", group = "Neotree", icon = { icon = "󰲂 ", color = "yellow" } },
+			{ "<leader>tn", group = "Toggle Neotree", icon = { icon = "󰲂 ", color = "yellow" } },
 
 			-- Delete
 			{ "<leader>x", group = "Delete (Black Hole)", icon = { icon = "󰗨", color = "red" } },
@@ -71,7 +71,8 @@ return {
 			{ "<leader>c", desc = "Code (File)", icon = { icon = " ", color = "orange" } },
 			{ "<leader>cs", desc = "Save", icon = { icon = "󰆓 ", color = "yellow" } },
 			{ "<leader>cn", desc = "Save without format", icon = { icon = "󰽂 ", color = "yellow" } },
-			{ "<leader>cf", desc = "Format", icon = { icon = "󰉿 ", color = "yellow" } },
+			{ "<leader>cf", desc = "Format", icon = { icon = " ", color = "yellow" } },
+			{ "<leader>tf", desc = "Toggle Format", icon = { icon = " ", color = "yellow" } },
 			-- Dimming
 			{ "<leader>cd", desc = "Dim", icon = { icon = "󱜟 ", color = "yellow" } },
 			{ "<leader>cD", desc = "UnDim", icon = { icon = "󰞏 ", color = "yellow" } },
@@ -123,7 +124,7 @@ return {
 			{ "<leader>y", desc = "Yank history", icon = { icon = " ", color = "purple" } },
 
 			-- Live server
-			{ "<leader>ts", desc = "Live Server", icon = { icon = " ", color = "green" } },
+			{ "<leader>ts", desc = "Toggle Live Server", icon = { icon = " ", color = "green" } },
 
 			-- Copilot
 			{ "<leader>tC", desc = "Toggle Copilot", icon = { icon = " ", color = "cyan" } },
@@ -132,7 +133,7 @@ return {
 			{ "<leader>a", desc = "Avante (AI)", icon = { icon = "󰚩 ", color = "red" } },
 
 			-- Render Markdown
-			{ "<leader>tM", desc = "Render Markdown", icon = { icon = " ", color = "cyan" } },
+			{ "<leader>tM", desc = "Toggle Render Markdown", icon = { icon = " ", color = "cyan" } },
 
 			-- Obsidian
 			{ "<leader>N", desc = "Obsidian", icon = { icon = " ", color = "green" } },
@@ -151,7 +152,7 @@ return {
 			{ "<leader>tc", desc = "Toggle Color Highlights", icon = { icon = "󰌁", color = "orange" } },
 
 			-- Mini files
-			{ "<leader>tm", desc = "Mini files", icon = { icon = "󰲂", color = "yellow" } },
+			{ "<leader>tm", desc = "Toggle Mini files", icon = { icon = "󰲂", color = "yellow" } },
 
 			-- Nvim toggler
 			{ "<leader>tw", desc = "Toggle word", icon = { icon = "", color = "green" } },

@@ -13,33 +13,20 @@ local opts = { noremap = true, silent = true }
 -----------------------------------------------------------
 --  INFO: Code (file) actions
 -----------------------------------------------------------
-local function message(msg, icon)
-	local file = vim.fn.expand("%:t")
-	return icon .. file .. msg
+local function smart_save()
+	if vim.g.disable_autoformat then
+		vim.cmd("noautocmd w")
+	else
+		vim.cmd("w")
+	end
 end
 
-map.set("n", "<leader>cs", function()
-	vim.cmd("w") -- Save
-end, opts)
-
-map.set("n", "<C-s>", function()
-	vim.cmd("w") -- Save 2
-end, opts)
+map.set("n", "<leader>cs", smart_save, opts)
+map.set("n", "<C-s>", smart_save, opts)
 
 map.set("n", "<leader>cn", function()
-	vim.cmd("noautocmd w") -- Save without format
+	vim.cmd("noautocmd w")
 end, opts)
-
-map.set({ "n" }, "<leader>cf", function()
-	require("conform").format({
-		lsp_fallback = true,
-		async = true,
-		timeout_ms = 500,
-	})
-	vim.notify(message(" Formatted!", " 󰆓 "), "", {
-		title = "VIM",
-	})
-end)
 
 -----------------------------------------------------------
 --  INFO: Find and center
@@ -203,4 +190,30 @@ end)
 
 map.set("n", "<leader>cD", function()
 	Snacks.dim.disable()
+end)
+-----------------------------------------------------------
+--  INFO: Formatting
+-----------------------------------------------------------
+vim.g.disable_autoformat = false
+
+map.set("n", "<leader>tf", function()
+	vim.g.disable_autoformat = not vim.g.disable_autoformat
+	local status = vim.g.disable_autoformat and "OFF" or "ON"
+	print("Auto-format " .. status)
+end, { desc = "Toggle auto-format" })
+
+local function message(msg, icon)
+	local file = vim.fn.expand("%:t")
+	return icon .. file .. msg
+end
+
+map.set({ "n" }, "<leader>cf", function()
+	require("conform").format({
+		lsp_fallback = true,
+		async = true,
+		timeout_ms = 500,
+	})
+	vim.notify(message(" Formatted!", " 󰆓 "), "", {
+		title = "VIM",
+	})
 end)
