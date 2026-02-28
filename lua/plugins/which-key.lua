@@ -26,7 +26,7 @@ return {
 			{ "<leader>t", group = "Toggles", icon = { icon = "", color = "yellow" } },
 
 			-- Neotree
-			{ "<leader>tn", group = "Toggle Neotree", icon = { icon = "󰲂 ", color = "yellow" } },
+			{ "<leader>n", group = "Neotree", icon = { icon = "󰲂 ", color = "yellow" } },
 
 			-- Delete
 			{ "<leader>x", group = "Delete (Black Hole)", icon = { icon = "󰗨", color = "red" } },
@@ -48,13 +48,13 @@ return {
 
 			-- Buffers
 			{ "<leader>b", group = "Buffers", icon = { icon = " ", color = "blue" } },
-			{ "<leader>bb", desc = "New", icon = { icon = " ", color = "yellow" } },
-			{ "<leader>bx", desc = "Close", icon = { icon = " ", color = "yellow" } },
+			{ "<leader>bn", desc = "New", icon = { icon = " ", color = "yellow" } },
+			{ "<leader>k", desc = "Kill buffer", icon = { icon = " ", color = "yellow" } },
 			{ "<leader>bf", desc = "Find", icon = { icon = " ", color = "yellow" } },
 
 			-- Telescope
 			{ "<leader>h", desc = "Help tags", icon = { icon = "󰞋 ", color = "green" } },
-			{ "<leader>G", desc = "Grep", icon = { icon = "󰈞 ", color = "cyan" } },
+			{ "<leader>g", desc = "Grep", icon = { icon = "󰈞 ", color = "cyan" } },
 
 			-- Tabs
 			{ "<leader>T", desc = "Tabs", icon = { icon = "󱃢 ", color = "purple" } },
@@ -84,20 +84,20 @@ return {
 			{ "<leader>z", desc = "Zen mode", icon = { icon = " ", color = "cyan" } },
 
 			-- Git
-			{ "<leader>g", desc = "Git", icon = { icon = " ", color = "cyan" } },
-			{ "<leader>gs", desc = "Stage hunk", icon = { icon = " ", color = "yellow" } },
-			{ "<leader>gS", desc = "Stage buffer", icon = { icon = " ", color = "yellow" } },
-			{ "<leader>gr", desc = "Reset hunk", icon = { icon = "󰑓 ", color = "yellow" } },
-			{ "<leader>gR", desc = "Reset buffer", icon = { icon = "󰑓 ", color = "yellow" } },
-			{ "<leader>gd", desc = "Diff this", icon = { icon = " ", color = "yellow" } },
-			{ "<leader>gb", desc = "Blame line", icon = { icon = " ", color = "yellow" } },
-			{ "<leader>gw", desc = "Word diff", icon = { icon = " ", color = "yellow" } },
-			{ "<leader>gm", desc = "Line blame", icon = { icon = "󰘤 ", color = "yellow" } },
-			{ "<leader>gi", desc = "Preview Hunk", icon = { icon = "󰮳 ", color = "yellow" } },
-			{ "<leader>gp", desc = "Preview Hunk (popup)", icon = { icon = "󰮳 ", color = "yellow" } },
-			{ "<leader>gq", desc = "Quick fix list", icon = { icon = "󰁨 ", color = "yellow" } },
+			{ "<leader>G", desc = "Git", icon = { icon = " ", color = "cyan" } },
+			{ "<leader>Gs", desc = "Stage hunk", icon = { icon = " ", color = "yellow" } },
+			{ "<leader>GS", desc = "Stage buffer", icon = { icon = " ", color = "yellow" } },
+			{ "<leader>Gr", desc = "Reset hunk", icon = { icon = "󰑓 ", color = "yellow" } },
+			{ "<leader>GR", desc = "Reset buffer", icon = { icon = "󰑓 ", color = "yellow" } },
+			{ "<leader>Gd", desc = "Diff this", icon = { icon = " ", color = "yellow" } },
+			{ "<leader>Gb", desc = "Blame line", icon = { icon = " ", color = "yellow" } },
+			{ "<leader>Gw", desc = "Word diff", icon = { icon = " ", color = "yellow" } },
+			{ "<leader>Gm", desc = "Line blame", icon = { icon = "󰘤 ", color = "yellow" } },
+			{ "<leader>Gi", desc = "Preview Hunk", icon = { icon = "󰮳 ", color = "yellow" } },
+			{ "<leader>Gp", desc = "Preview Hunk (popup)", icon = { icon = "󰮳 ", color = "yellow" } },
+			{ "<leader>Gq", desc = "Quick fix list", icon = { icon = "󰁨 ", color = "yellow" } },
 			-- Lazygit
-			{ "<leader>gl", desc = "Lazygit", icon = { icon = "󰒲 ", color = "yellow" } },
+			{ "<leader>Gl", desc = "Lazygit", icon = { icon = "󰒲 ", color = "yellow" } },
 
 			-- Lorem ipsum
 			{ "<leader>L", desc = "LoremIpsum", icon = { icon = "󰬓 ", color = "azure" } },
@@ -152,7 +152,7 @@ return {
 			{ "<leader>tc", desc = "Toggle Color Highlights", icon = { icon = "󰌁", color = "orange" } },
 
 			-- Mini files
-			{ "<leader>tm", desc = "Toggle Mini files", icon = { icon = "󰲂", color = "yellow" } },
+			{ "<leader>e", desc = "Mini files", icon = { icon = "󰲂", color = "yellow" } },
 
 			-- Nvim toggler
 			{ "<leader>tw", desc = "Toggle word", icon = { icon = "", color = "green" } },

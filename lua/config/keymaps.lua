@@ -47,8 +47,8 @@ map.set("n", "<Right>", ":vertical resize +2<CR>", opts)
 -----------------------------------------------------------
 map.set("n", "<Tab>", ":bnext<CR>", opts)
 map.set("n", "<S-Tab>", ":bprevious<CR>", opts)
-map.set("n", "<leader>bx", ":lua MiniBufremove.delete()<CR>", opts) -- close buffer
-map.set("n", "<leader>bb", "<cmd> enew <CR>", opts) -- new buffer
+map.set("n", "<leader>k", ":lua MiniBufremove.delete()<CR>", opts) -- kill buffer
+map.set("n", "<leader>bn", "<cmd> enew <CR>", opts) -- new buffer
 
 -----------------------------------------------------------
 --  INFO: Split
@@ -176,7 +176,7 @@ map.set("n", "<leader>Ph", ":Huefy<CR>")
 -----------------------------------------------------------
 --  INFO: Snacks
 -----------------------------------------------------------
-map.set("n", "<leader>gl", function()
+map.set("n", "<leader>Gl", function()
 	Snacks.lazygit()
 end)
 

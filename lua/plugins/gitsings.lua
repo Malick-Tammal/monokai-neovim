@@ -33,33 +33,33 @@ return {
 				end)
 
 				-- Actions
-				map("n", "<leader>gs", gitsigns.stage_hunk)
-				map("n", "<leader>gr", gitsigns.reset_hunk)
+				map("n", "<leader>Gs", gitsigns.stage_hunk)
+				map("n", "<leader>Gr", gitsigns.reset_hunk)
 
-				map("v", "<leader>gh", function()
+				map("v", "<leader>Gh", function()
 					gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
 				end)
 
-				map("v", "<leader>gu", function()
+				map("v", "<leader>Gu", function()
 					gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
 				end)
 
-				map("n", "<leader>gS", gitsigns.stage_buffer)
-				map("n", "<leader>gR", gitsigns.reset_buffer)
-				map("n", "<leader>gp", gitsigns.preview_hunk)
-				map("n", "<leader>gi", gitsigns.preview_hunk_inline)
+				map("n", "<leader>GS", gitsigns.stage_buffer)
+				map("n", "<leader>GR", gitsigns.reset_buffer)
+				map("n", "<leader>Gp", gitsigns.preview_hunk)
+				map("n", "<leader>Gi", gitsigns.preview_hunk_inline)
 
-				map("n", "<leader>gb", function()
+				map("n", "<leader>Gb", function()
 					gitsigns.blame_line({ full = true })
 				end)
 
-				map("n", "<leader>gd", gitsigns.diffthis)
+				map("n", "<leader>Gd", gitsigns.diffthis)
 
-				map("n", "<leader>gq", gitsigns.setqflist)
+				map("n", "<leader>Gq", gitsigns.setqflist)
 
 				-- Toggles
-				map("n", "<leader>gm", gitsigns.toggle_current_line_blame)
-				map("n", "<leader>gw", gitsigns.toggle_word_diff)
+				map("n", "<leader>Gm", gitsigns.toggle_current_line_blame)
+				map("n", "<leader>Gw", gitsigns.toggle_word_diff)
 			end,
 		})
 	end,

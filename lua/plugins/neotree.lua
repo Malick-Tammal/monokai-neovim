@@ -6,7 +6,7 @@ return {
 
 	--  INFO: Keymaps
 	keys = {
-		{ "<leader>tn", "<Cmd>Neotree toggle<CR>", desc = "Explorer Neotree" },
+		{ "<leader>n", "<Cmd>Neotree toggle<CR>", desc = "Explorer Neotree" },
 	},
 
 	--  INFO: Config

@@ -12,7 +12,7 @@ return {
 	--  INFO: Keymaps
 	keys = {
 		{ "<leader><space>", "<Cmd>Telescope find_files<CR>", desc = "Telescope Find Files" },
-		{ "<leader>G", "<Cmd>Telescope live_grep<CR>", desc = "Telescope Live Grep" },
+		{ "<leader>g", "<Cmd>Telescope live_grep<CR>", desc = "Telescope Live Grep" },
 		{ "<leader>bf", "<Cmd>Telescope buffers<CR>", desc = "Telescope Buffers" },
 		{ "<leader>h", "<Cmd>Telescope help_tags<CR>", desc = "Telescope Help Tags" },
 	},
