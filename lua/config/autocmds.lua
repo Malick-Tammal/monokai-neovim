@@ -65,3 +65,23 @@ vim.api.nvim_create_autocmd("BufRead", {
 		vim.bo.filetype = "dosini"
 	end,
 })
+
+-----------------------------------------------------------
+--  INFO: Change window title based on the mode (for hyprland border color)
+-----------------------------------------------------------
+vim.api.nvim_create_autocmd({ "UIEnter", "ModeChanged" }, {
+	callback = function()
+		local mode = vim.fn.mode()
+		local title = "nvim-normal"
+
+		if mode == "i" then
+			title = "nvim-insert"
+		elseif mode == "R" then
+			title = "nvim-replace"
+		elseif mode == "v" or mode == "V" or mode == "\22" then
+			title = "nvim-visual"
+		end
+
+		vim.opt.titlestring = title
+	end,
+})
