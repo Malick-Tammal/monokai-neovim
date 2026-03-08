@@ -161,11 +161,14 @@ return {
 			{ "<leader>P", desc = "Pickers", icon = { icon = "󰉦", color = "purple" } },
 
 			-- Treesj
-			{ "<leader>w", desc = "(Split / Join)", icon = { icon = " ", color = "yellow" } },
+			{ "<leader>w", desc = "(Split / Join)", icon = { icon = "", color = "yellow" } },
+
+			-- Supermaven
+			{ "<leader>tS", desc = "Toggle Supermaven (AI)", icon = { icon = "󰚩", color = "orange" } },
 		})
 
 		wk.setup({
-			preset = "classic", -- INFO: classic - modern - helix
+			preset = "classic", --  TIP: classic - modern - helix
 			icons = {
 				-- group = "   ",
 				group = "  ",
