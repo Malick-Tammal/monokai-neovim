@@ -1,3 +1,30 @@
+local header1 = function()
+	return [[
+          ▄ ▄
+      ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄
+      █ ▄ █▄█ ▄▄▄ █ █▄█ █ █
+   ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █
+ ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄
+▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █
+█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █
+   █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█
+	
+        [ malick.dev ] ]]
+end
+
+local header2 = function()
+	return [[
+     █ █ █▀▀▀ ▀▀▀█ █ █ ▀ ▀ 
+     █ █ ▀▀▀▀▀▀▀▀▀ █ █ █▀█ 
+     █ █ █▀▀ ▀ ▀▀▀▀▀ █ ▀▀█ 
+     █ █▀▀▀▀ █ ▀▀█ ▀ █▀▀▀▀ 
+     ▀▀█▀█ █▀▀ ▀▀▀ █ █ █▀█ 
+     █ ▀▀▀ ▀▀█ ▀▀▀▀▀ █ ▀▀█ 
+     ▀▀▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀ ▀▀▀
+        ]]
+end
+
 return {
 	"folke/snacks.nvim",
 	cond = not vim.g.vscode,
@@ -24,7 +51,7 @@ return {
 				},
 			},
 			animate_repeat = {
-				delay = 100, -- delay in ms before using the repeat animation
+				delay = 100,
 				duration = { step = 5, total = 50 },
 				easing = "linear",
 			},
@@ -101,17 +128,16 @@ return {
 
 		statuscolumn = {
 			enabled = true,
-			left = { "mark", "sign" }, -- priority of signs on the left (high to low)
-			right = { "fold", "git" }, -- priority of signs on the right (high to low)
+			left = { "mark", "sign" },
+			right = { "fold", "git" },
 			folds = {
-				open = true, -- show open fold icons
-				git_hl = false, -- use Git Signs hl for fold icons
+				open = true,
+				git_hl = false,
 			},
 			git = {
-				-- patterns to match Git signs
 				patterns = { "GitSign", "MiniDiffSign" },
 			},
-			refresh = 50, -- refresh at most every 50ms
+			refresh = 50,
 		},
 
 		lazygit = {
@@ -210,18 +236,7 @@ return {
 						action = ":qa",
 					},
 				},
-				header = [[
-          ▄ ▄
-      ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄
-      █ ▄ █▄█ ▄▄▄ █ █▄█ █ █
-   ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █
- ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄
-▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █
-█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █
-   █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█
-	
-        [ malick.dev ] ]],
+				header = header1(),
 			},
 			sections = {
 				{ section = "header", padding = 0, align = "left" },
