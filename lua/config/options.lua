@@ -92,3 +92,6 @@ opt.undofile = true
 opt.scrolloff = 4 -- Lines of context
 
 opt.expandtab = true
+
+--  BUG: Fixing the new bug (for now)
+vim.opt.ruler = false
