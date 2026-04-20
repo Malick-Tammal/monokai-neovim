@@ -1,162 +1,181 @@
 -- Kind icons
 local kind_icons = {
-    Text = "󰉿",
-    Method = "󰆧",
-    Function = "",
-    Constructor = "",
-    Field = "󰜢",
-    Variable = "󱄑",
-    Class = "󰠱",
-    Interface = "",
-    Module = "",
-    Property = "󰜢",
-    Unit = "󰑭",
-    Value = "󰎠",
-    Enum = "",
-    Keyword = "󰌋",
-    Snippet = "",
-    Color = "󰏘",
-    File = "󰈙",
-    Reference = "󰈇",
-    Folder = "󰉋",
-    EnumMember = "",
-    Constant = "󰏿",
-    Struct = "󰙅",
-    Event = "",
-    Operator = "󰆕",
-    TypeParameter = "",
+	Text = "󰉿",
+	Method = "󰆧",
+	Function = "",
+	Constructor = "",
+	Field = "󰜢",
+	Variable = "󱄑",
+	Class = "󰠱",
+	Interface = "",
+	Module = "",
+	Property = "󰜢",
+	Unit = "󰑭",
+	Value = "󰎠",
+	Enum = "",
+	Keyword = "󰌋",
+	Snippet = "",
+	Color = "󰏘",
+	File = "󰈙",
+	Reference = "󰈇",
+	Folder = "󰉋",
+	EnumMember = "",
+	Constant = "󰏿",
+	Struct = "󰙅",
+	Event = "",
+	Operator = "󰆕",
+	TypeParameter = "",
 }
 
 return {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+	"hrsh7th/nvim-cmp",
+	event = "InsertEnter",
 
-    dependencies = {
-        -- Core Sources
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
-        "hrsh7th/cmp-calc",
-        "hrsh7th/cmp-emoji",
-        "octaltree/cmp-look",
+	dependencies = {
+		-- Core Sources
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-calc",
+		"hrsh7th/cmp-emoji",
+		"octaltree/cmp-look",
 
-        -- Snippet Engine
-        "L3MON4D3/LuaSnip",
-        "saadparwaiz1/cmp_luasnip",
-        "rafamadriz/friendly-snippets",
+		-- Snippet Engine
+		"L3MON4D3/LuaSnip",
+		"saadparwaiz1/cmp_luasnip",
+		"rafamadriz/friendly-snippets",
 
-        -- UI & Extras
-        "onsails/lspkind.nvim",
-        "lukas-reineke/cmp-under-comparator",
-        "roobert/tailwindcss-colorizer-cmp.nvim",
-    },
+		-- UI & Extras
+		"onsails/lspkind.nvim",
+		"lukas-reineke/cmp-under-comparator",
+		"roobert/tailwindcss-colorizer-cmp.nvim",
+	},
 
-    config = function()
-        local cmp = require("cmp")
-        local luasnip = require("luasnip")
-        local lspkind = require("lspkind")
-        local tailwind_formatter = require("tailwindcss-colorizer-cmp").formatter
+	config = function()
+		local cmp = require("cmp")
+		local luasnip = require("luasnip")
+		local lspkind = require("lspkind")
+		local tailwind_formatter = require("tailwindcss-colorizer-cmp").formatter
 
-        require("luasnip.loaders.from_vscode").lazy_load()
+		require("luasnip.loaders.from_vscode").lazy_load()
 
-        cmp.setup({
-            completion = {
-                completeopt = "menu, menuone, preview",
-            },
+		cmp.setup({
+			completion = {
+				completeopt = "menu, menuone, preview",
+			},
 
-            snippet = {
-                expand = function(args)
-                    luasnip.lsp_expand(args.body)
-                end,
-            },
+			snippet = {
+				expand = function(args)
+					luasnip.lsp_expand(args.body)
+				end,
+			},
 
-            window = {
-                completion = {
-                    border = "rounded",
-                    winhighlight = "Normal:CmpPmenu,FloatBorder:CmpMenuBorder,CursorLine:PmenuSel,Search:None",
-                    side_padding = 1,
-                },
-                documentation = {
-                    border = "rounded",
-                    winhighlight = "Normal:CmpDocNormal,FloatBorder:CmpMenuBorder",
-                },
-            },
+			window = {
+				completion = {
+					border = "rounded",
+					winhighlight = "Normal:CmpPmenu,FloatBorder:CmpMenuBorder,CursorLine:PmenuSel,Search:None",
+					side_padding = 1,
+				},
+				documentation = {
+					border = "rounded",
+					winhighlight = "Normal:CmpDocNormal,FloatBorder:CmpMenuBorder",
+				},
+			},
 
-            mapping = cmp.mapping.preset.insert({
-                -- ["<C-Space>"] = cmp.mapping.complete(),
+			mapping = cmp.mapping.preset.insert({
+				-- ["<C-Space>"] = cmp.mapping.complete(),
 
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<CR>"] = cmp.mapping.confirm({ select = true }),
 
-                ["<C-j>"] = cmp.mapping.select_next_item(),
-                ["<Tab>"] = cmp.mapping.select_next_item(),
+				["<C-j>"] = cmp.mapping.select_next_item(),
+				["<Tab>"] = cmp.mapping.select_next_item(),
 
-                ["<C-k>"] = cmp.mapping.select_prev_item(),
-                ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+				["<C-k>"] = cmp.mapping.select_prev_item(),
+				["<S-Tab>"] = cmp.mapping.select_prev_item(),
 
-                ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-n>"] = cmp.mapping.scroll_docs(4),
+				["<C-u>"] = cmp.mapping.scroll_docs(-4),
+				["<C-n>"] = cmp.mapping.scroll_docs(4),
 
-                ["<C-d>"] = cmp.mapping.abort(),
-            }),
+				["<C-d>"] = cmp.mapping.abort(),
+			}),
 
-            sources = cmp.config.sources({
-                { name = "nvim_lsp" },
-                { name = "luasnip" },
-                { name = "buffer" },
-                { name = "path" },
-                { name = "calc" },
-                { name = "emoji" },
-                { name = "look",    keyword_length = 2 },
-            }),
+			sources = cmp.config.sources({
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+				{ name = "buffer" },
+				{ name = "path" },
+				{ name = "calc" },
+				{ name = "emoji" },
+				{ name = "look", keyword_length = 2 },
+			}),
 
-            formatting = {
-                fields = { "kind", "abbr", "menu" },
+			formatting = {
+				fields = { "kind", "abbr", "menu" },
 
-                format = lspkind.cmp_format({
-                    mode = "symbol",
-                    maxwidth = 20,
-                    ellipsis_char = "...",
+				format = lspkind.cmp_format({
+					mode = "symbol",
+					maxwidth = 20,
+					ellipsis_char = "...",
 
-                    before = function(entry, vim_item)
-                        vim_item.abbr = " " .. vim_item.abbr
-                        vim_item.kind = string.format("%s", kind_icons[vim_item.kind] or "")
+					before = function(entry, vim_item)
+						local source_icons = {
+							emoji = "",
+							look = "",
+							calc = "󰃬",
+						}
 
-                        vim_item = tailwind_formatter(entry, vim_item)
+						local source_hl_groups = {
+							emoji = "CmpItemKindEmoji",
+							look = "CmpItemKindLook",
+							calc = "CmpItemKindCalc",
+						}
 
-                        vim_item.menu = ({
-                            nvim_lsp = "[LSP]",
-                            luasnip = "[Snip]",
-                            buffer = "[Buf]",
-                            path = "[Path]",
-                            emoji = "[Emoji]",
-                        })[entry.source.name]
+						vim_item.abbr = " " .. vim_item.abbr
 
+						local icon = source_icons[entry.source.name] or kind_icons[vim_item.kind] or ""
+						vim_item.kind = string.format("%s", icon)
 
-                        return vim_item
-                    end
-                })
-            },
+						if source_hl_groups[entry.source.name] then
+							vim_item.kind_hl_group = source_hl_groups[entry.source.name]
+						end
 
-            --  INFO: Ghost text
-            experimental = {
-                ghost_text = false,
-            },
+						vim_item = tailwind_formatter(entry, vim_item)
 
-            sorting = {
-                priority_weight = 2,
+						vim_item.menu = ({
+							nvim_lsp = "[LSP]",
+							luasnip = "[Snip]",
+							buffer = "[Buf]",
+							path = "[Path]",
+							emoji = "[Emoji]",
+							look = "[Dict]",
+							calc = "[Calc]",
+						})[entry.source.name]
 
-                comparators = {
-                    require("cmp-under-comparator").under,
+						return vim_item
+					end,
+				}),
+			},
 
-                    cmp.config.compare.offset,
-                    cmp.config.compare.exact,
-                    cmp.config.compare.score,
-                    cmp.config.compare.kind,
-                    cmp.config.compare.sort_text,
-                    cmp.config.compare.length,
-                    cmp.config.compare.order,
-                },
-            },
-        })
-    end,
+			--  INFO: Ghost text
+			experimental = {
+				ghost_text = false,
+			},
+
+			sorting = {
+				priority_weight = 2,
+
+				comparators = {
+					require("cmp-under-comparator").under,
+
+					cmp.config.compare.offset,
+					cmp.config.compare.exact,
+					cmp.config.compare.score,
+					cmp.config.compare.kind,
+					cmp.config.compare.sort_text,
+					cmp.config.compare.length,
+					cmp.config.compare.order,
+				},
+			},
+		})
+	end,
 }

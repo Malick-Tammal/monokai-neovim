@@ -173,6 +173,9 @@ return {
 				Event = c.base.red,
 				Operator = c.base.dimmed2,
 				TypeParameter = c.base.yellow,
+				Emoji = c.base.yellow,
+				Look = c.base.blue,
+				Calc = c.base.cyan,
 			}
 
 			vim.api.nvim_create_autocmd("ColorScheme", {
