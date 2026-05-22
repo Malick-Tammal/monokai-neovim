@@ -26,6 +26,7 @@ return {
 
 				-- INFO: Other
 				rust = { "rustfmt" },
+				python = { "autoflake" },
 			},
 
 			format_on_save = {

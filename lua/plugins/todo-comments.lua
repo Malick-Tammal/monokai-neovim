@@ -24,6 +24,7 @@ return {
 
 	--  INFO: Options
 	opts = {
+
 		keywords = {
 			-- tests to show them
 
@@ -50,6 +51,7 @@ return {
 
 		highlight = {
 			multiline = false,
+			comments_only = false,
 		},
 
 		colors = {

@@ -21,7 +21,7 @@ return {
 			vim.lsp.config("lua_ls", {
 				settings = {
 					Lua = {
-						-- make the language server recognize "vim" global
+						--  TIP: make the language server recognize "vim" global
 						diagnostics = {
 							globals = { "vim" },
 						},
@@ -67,6 +67,7 @@ return {
 				"bashls",
 				"hyprls",
 				"qmlls",
+				"pyright",
 			})
 		end,
 	},
@@ -74,8 +75,8 @@ return {
 	-- HACK: Diagnostic config
 	{
 		"rachartier/tiny-inline-diagnostic.nvim",
-		event = "LspAttach", -- Or `LspAttach`
-		priority = 1000, -- needs to be loaded in first
+		event = "LspAttach",
+		priority = 1000, --  TIP: needs to be loaded in first
 		keys = {
 			{ "<leader>td", "<Cmd>lua require('tiny-inline-diagnostic').toggle()<CR>", desc = "Toggle diagnostics" },
 		},
@@ -98,10 +99,10 @@ return {
 						always_show = false,
 					},
 				},
-				disabled_ft = {}, -- List of filetypes to disable the plugin
+				disabled_ft = {},
 			})
 
-			-- Change the Diagnostic symbols
+			--  INFO: Change the Diagnostic symbols
 			vim.diagnostic.config({
 				underline = false,
 				virtual_text = false,

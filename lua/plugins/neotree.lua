@@ -101,7 +101,7 @@ return {
 							return
 						end
 
-						-- Use trash-put from trash-cli
+						--  TIP: Use trash-put from trash-cli
 						vim.fn.system({ "trash-put", vim.fn.fnameescape(node.path) })
 						require("neo-tree.sources.manager").refresh(state.name)
 					end)
@@ -133,7 +133,7 @@ return {
 			end,
 
 			modified = {
-				symbol = "",
+				symbol = "-",
 				highlight = "NeoTreeModified",
 			},
 
