@@ -85,3 +85,8 @@ vim.api.nvim_create_autocmd({ "UIEnter", "ModeChanged" }, {
 		vim.opt.titlestring = title
 	end,
 })
+
+-----------------------------------------------------------
+--  INFO: Muscle memory issue with "LspInfo" after neovim update
+-----------------------------------------------------------
+vim.api.nvim_create_user_command("LspInfo", "checkhealth vim.lsp", {})

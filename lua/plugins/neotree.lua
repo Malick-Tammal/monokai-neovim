@@ -133,7 +133,7 @@ return {
 			end,
 
 			modified = {
-				symbol = "-",
+				symbol = "",
 				highlight = "NeoTreeModified",
 			},
 
@@ -142,7 +142,7 @@ return {
 					-- Change type
 					added = "✚",
 					deleted = "✖",
-					modified = "",
+					modified = "-",
 					renamed = "󰁕",
 					-- Status type
 					untracked = "",
