@@ -1,6 +1,5 @@
 return {
 	"Wansmer/treesj",
-	dir = "~/Projects/treesj",
 	event = { "BufReadPre", "BufNewFile" },
 
 	-- HACK: Config
