@@ -1,22 +1,23 @@
 return {
-    "Wansmer/treesj",
-    event = { "BufReadPre", "BufNewFile" },
+	"Wansmer/treesj",
+	dir = "~/Projects/treesj",
+	event = { "BufReadPre", "BufNewFile" },
 
-    -- HACK: Config
-    config = function()
-        local treesj = require("treesj")
-        treesj.setup({
-            max_join_length = 300,
-            use_default_keymaps = false,
-            langs = { qmljs = require('treesj.langs.javascript') },
-        })
+	-- HACK: Config
+	config = function()
+		local tsj = require("treesj")
 
-        -----------------------------------------------------------
-        --  INFO: Keymaps
-        -----------------------------------------------------------
+		tsj.setup({
+			max_join_length = 300,
+			use_default_keymaps = false,
+		})
 
-        vim.keymap.set("n", "<leader>w", function()
-            require("treesj").toggle()
-        end)
-    end,
+		-----------------------------------------------------------
+		--  INFO: Keymaps
+		-----------------------------------------------------------
+
+		vim.keymap.set("n", "<leader>w", function()
+			require("treesj").toggle()
+		end)
+	end,
 }
