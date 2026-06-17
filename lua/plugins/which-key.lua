@@ -48,8 +48,8 @@ return {
 
 			-- Buffers
 			{ "<leader>b", group = "Buffers", icon = { icon = " ", color = "blue" } },
-			{ "<leader>bn", desc = "New", icon = { icon = " ", color = "yellow" } },
-			{ "<leader>k", desc = "Kill buffer", icon = { icon = " ", color = "yellow" } },
+			-- { "<leader>bn", desc = "New", icon = { icon = " ", color = "yellow" } },
+			-- { "<leader>k", desc = "Kill buffer", icon = { icon = " ", color = "yellow" } },
 			{ "<leader>bf", desc = "Find", icon = { icon = " ", color = "yellow" } },
 
 			-- Telescope
@@ -72,7 +72,7 @@ return {
 			{ "<leader>cs", desc = "Save", icon = { icon = "󰆓 ", color = "yellow" } },
 			{ "<leader>cn", desc = "Save without format", icon = { icon = "󰽂 ", color = "yellow" } },
 			{ "<leader>cf", desc = "Format", icon = { icon = " ", color = "yellow" } },
-			{ "<leader>tf", desc = "Toggle Format", icon = { icon = " ", color = "yellow" } },
+			{ "<leader>tf", desc = "Toggle Auto-Format", icon = { icon = " ", color = "yellow" } },
 			-- Dimming
 			{ "<leader>cd", desc = "Dim", icon = { icon = "󱜟 ", color = "yellow" } },
 			{ "<leader>cD", desc = "UnDim", icon = { icon = "󰞏 ", color = "yellow" } },

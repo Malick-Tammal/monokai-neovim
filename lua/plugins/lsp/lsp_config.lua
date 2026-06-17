@@ -26,13 +26,10 @@ return {
 						},
 						--  TIP: make the language server recognize "vim" global
 						diagnostics = {
-							globals = { "vim", "require" },
+							globals = { "vim", "require", "Snacks" },
 						},
 						completion = {
 							callSnippet = "Replace",
-						},
-						workspace = {
-							library = vim.api.nvim_get_runtime_file("", true),
 						},
 						telemetry = {
 							enable = false,
