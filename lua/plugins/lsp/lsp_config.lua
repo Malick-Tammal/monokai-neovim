@@ -21,12 +21,21 @@ return {
 			vim.lsp.config("lua_ls", {
 				settings = {
 					Lua = {
+						runtime = {
+							version = "LuaJIT",
+						},
 						--  TIP: make the language server recognize "vim" global
 						diagnostics = {
-							globals = { "vim" },
+							globals = { "vim", "require" },
 						},
 						completion = {
 							callSnippet = "Replace",
+						},
+						workspace = {
+							library = vim.api.nvim_get_runtime_file("", true),
+						},
+						telemetry = {
+							enable = false,
 						},
 					},
 				},
