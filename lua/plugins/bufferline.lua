@@ -2,8 +2,12 @@ return {
 	"akinsho/bufferline.nvim",
 	cond = not vim.g.vscode,
 	version = "*",
-	event = { "BufReadPre", "BufNewFile" },
+	event = "VeryLazy",
 	enabled = true,
+	dependencies = {
+		"Mirsmog/real-icons.nvim",
+		"nvim-tree/nvim-web-devicons",
+	},
 
 	-- HACK:
 	opts = {
@@ -39,11 +43,18 @@ return {
 			right_command = "lua MiniBufremove.delete()",
 			tab_size = 15,
 			color_icons = true,
-			separator_style = "slank",
+			separator_style = "thick",
 
 			hover = {
 				enabled = true,
 				reveal = { "close" },
+			},
+		},
+
+		--  TODO: Convert this to work in monokai pro
+		highlights = {
+			background = {
+				bg = "#32322E",
 			},
 		},
 	},

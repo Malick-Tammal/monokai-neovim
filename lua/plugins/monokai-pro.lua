@@ -1,3 +1,4 @@
+--  TODO: Create you own colorscheme
 return {
 	"loctvl842/monokai-pro.nvim",
 	tag = "v1.26.0",

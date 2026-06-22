@@ -3,6 +3,7 @@ return {
 	cond = not vim.g.vscode,
 	branch = "v3.x",
 	event = "VeryLazy",
+	enabled = true,
 
 	--  INFO: Keymaps
 	keys = {
