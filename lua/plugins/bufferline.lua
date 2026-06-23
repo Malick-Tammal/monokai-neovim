@@ -4,6 +4,7 @@ return {
 	version = "*",
 	event = "VeryLazy",
 	enabled = true,
+
 	dependencies = {
 		"Mirsmog/real-icons.nvim",
 		"nvim-tree/nvim-web-devicons",
