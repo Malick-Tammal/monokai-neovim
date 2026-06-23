@@ -2,7 +2,7 @@ return {
 	"Mirsmog/real-icons.nvim",
 	build = ":RealIconsInstallPack material",
 	cond = not vim.g.vscode,
-	event = "VeryLazy",
+	-- event = "VeryLazy",
 	enabled = true,
 
 	config = function()
@@ -36,6 +36,7 @@ return {
 				mini_files = true,
 				telescope = true,
 				telescope_file_browser = true,
+				lualine = true,
 			},
 		})
 	end,
