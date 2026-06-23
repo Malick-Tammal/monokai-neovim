@@ -35,35 +35,35 @@ made for web development mainly and software development secondary
 
 Welcome page (snacks dashboard)
 
-![Neovim dashboard](./preview/1.webp)
+![Neovim dashboard](./assets/preview/1.webp)
 
 Editor
 
-![Neovim editor](./preview/2.webp)
+![Neovim editor](./assets/preview/2.webp)
 
 Editor 2
 
-![Neovim editor2](./preview/3.webp)
+![Neovim editor2](./assets/preview/3.webp)
 
 Telescope
 
-![Neovim telescope](./preview/4.webp)
+![Neovim telescope](./assets/preview/4.webp)
 
 Lazyvim (Plugins manager)
 
-![Neovim lazyvim](./preview/5.webp)
+![Neovim lazyvim](./assets/preview/5.webp)
 
 Mason (lsp's / formatters manager)
 
-![Neovim mason](./preview/6.webp)
+![Neovim mason](./assets/preview/6.webp)
 
 Whichkey (keymaps viewer)
 
-![Neovim wichkey](./preview/7.webp)
+![Neovim wichkey](./assets/preview/7.webp)
 
 Project picker (I made it to easy hook up to project)
 
-![Neovim project picker](./preview/8.webp)
+![Neovim project picker](./assets/preview/8.webp)
 
 <div align="center">
 

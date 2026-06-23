@@ -20,13 +20,13 @@ return {
 
 			overrides = {
 				extensions = {
-					qml = "~/Downloads/qml.svg",
+					qml = "../../assets/icons/qml.svg",
 				},
 				filenames = {
-					["hyprland.conf"] = "~/Downloads/hyprland.svg",
-					["hyprland.lua"] = "~/Downloads/hyprland.svg",
-					["hypridle.conf"] = "~/Downloads/hyprland.svg",
-					["hyprlock.conf"] = "~/Downloads/hyprland.svg",
+					["hyprland.conf"] = "../../assets/icons/hyprland.svg",
+					["hyprland.lua"] = "../../assets/icons/hyprland.svg",
+					["hypridle.conf"] = "../../assets/icons/hyprland.svg",
+					["hyprlock.conf"] = "../../assets/icons/hyprland.svg",
 				},
 			},
 
