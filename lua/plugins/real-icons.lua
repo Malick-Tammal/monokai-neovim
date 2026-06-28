@@ -2,8 +2,9 @@ return {
 	"Mirsmog/real-icons.nvim",
 	build = ":RealIconsInstallPack material",
 	cond = not vim.g.vscode,
-	-- event = "VeryLazy",
+	event = "VeryLazy",
 	enabled = true,
+	commit = "82882a5",
 
 	config = function()
 		require("real-icons").setup({
