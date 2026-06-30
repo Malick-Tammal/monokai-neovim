@@ -55,7 +55,7 @@ return {
 			})
 
 			vim.lsp.config("qmlls", {
-				cmd = { "qml-language-server" },
+				cmd = { "qml-language-server", "-E" },
 				filetypes = { "qml" },
 				root_markers = { ".qmlls.ini", "shell.qml", ".git" },
 			})
