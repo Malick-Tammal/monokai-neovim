@@ -16,7 +16,8 @@ return {
 			},
 			marks = {
 				Cursor = {
-					highlight = "CursorIndicator",
+					text = "•",
+					highlight = "MoreMsg",
 				},
 			},
 			excluded_buftypes = {
@@ -34,6 +35,10 @@ return {
 				"prompt",
 				"TelescopePrompt",
 				"neo-tree",
+			},
+			handlers = {
+				gitsigns = true,
+				diagnostic = true,
 			},
 		})
 	end,
