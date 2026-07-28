@@ -122,25 +122,7 @@ end, { desc = "Projects" })
 -----------------------------------------------------------
 --  INFO: Comment Header
 -----------------------------------------------------------
-local inscom = require("plugins.custom.inscom")
-
-map.set("n", "<leader>C1", function()
-	inscom.setup({
-		style = "style-1", -- style 1
-	})
-end, { desc = "Header 1" })
-
-map.set("n", "<leader>C2", function()
-	inscom.setup({
-		style = "style-2", -- style 2
-	})
-end, { desc = "Header 2" })
-
-map.set("n", "<leader>C3", function()
-	inscom.setup({
-		style = "style-3", -- style 3
-	})
-end, { desc = "Header 3" })
+map.set("n", "<leader>C", "<Cmd>Inscom<CR>", { desc = "Header 1" })
 
 -----------------------------------------------------------
 --  INFO: Renamer

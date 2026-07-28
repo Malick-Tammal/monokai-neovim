@@ -4,9 +4,10 @@ return {
 	cond = not vim.g.vscode,
 	event = "VeryLazy",
 	enabled = true,
-	commit = "82882a5",
 
 	config = function()
+		local icon_dir = vim.fn.stdpath("config") .. "/assets/icons/"
+
 		require("real-icons").setup({
 			pack = "flow",
 
@@ -21,13 +22,13 @@ return {
 
 			overrides = {
 				extensions = {
-					qml = "../../assets/icons/qml.svg",
+					qml = icon_dir .. "qml.svg",
 				},
 				filenames = {
-					["hyprland.conf"] = "../../assets/icons/hyprland.svg",
-					["hyprland.lua"] = "../../assets/icons/hyprland.svg",
-					["hypridle.conf"] = "../../assets/icons/hyprland.svg",
-					["hyprlock.conf"] = "../../assets/icons/hyprland.svg",
+					["hyprland.conf"] = icon_dir .. "hyprland.svg",
+					["hyprland.lua"] = icon_dir .. "hyprland.svg",
+					["hypridle.conf"] = icon_dir .. "hyprland.svg",
+					["hyprlock.conf"] = icon_dir .. "hyprland.svg",
 				},
 			},
 

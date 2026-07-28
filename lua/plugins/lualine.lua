@@ -22,19 +22,6 @@ return {
 			end,
 		}
 
-		local filename = {
-			"filename",
-			file_status = true,
-			path = 0,
-			symbols = {
-				modified = "󰷈",
-				readonly = "󰈡",
-			},
-			fmt = function(str)
-				return " " .. str
-			end,
-		}
-
 		local progress = {
 			"progress",
 			separator = { right = "" },
@@ -54,19 +41,38 @@ return {
 		local diagnostics = {
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
-			sections = { "error", "warn" },
+			sections = { "error", "warn", "info", "hint" },
 			symbols = { error = " ", warn = " ", info = " ", hint = "󰠠 " },
 			colored = true,
 			update_in_insert = false,
 			always_visible = false,
 			cond = hide_in_width,
+			component_separators = { right = "   " },
+			fmt = function(str)
+				if str ~= "" then
+					return "[ " .. str .. "%#lualine_x_normal# ]"
+				end
+				return ""
+			end,
 		}
 
 		local diff = {
 			"diff",
 			colored = false,
-			symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+			symbols = { added = " ", modified = " ", removed = " " },
 			cond = hide_in_width,
+		}
+
+		local real_icon = {
+			require("real-icons.integrations.lualine").component,
+			padding = { left = 1, right = 0 },
+		}
+
+		local pretty_path = {
+			"pretty_path",
+			icon_show = false,
+			use_symbols = false,
+			padding = { left = 1, right = 1 },
 		}
 
 		require("lualine").setup({
@@ -74,7 +80,6 @@ return {
 				icons_enabled = true,
 				theme = "auto",
 				section_separators = { left = "", right = "" },
-				-- component_separators = { left = "", right = "" },
 				component_separators = { left = "", right = "" },
 				disabled_filetypes = { "alpha", "snacks_dashboard", "dashboard" },
 				always_divide_middle = true,
@@ -82,7 +87,7 @@ return {
 			sections = {
 				lualine_a = { mode },
 				lualine_b = { { "branch", icon = "" } },
-				lualine_c = { "pretty_path" }, -- filename
+				lualine_c = { real_icon, pretty_path },
 				lualine_d = {
 					function()
 						return require("lsp-progress").progress()
@@ -91,14 +96,6 @@ return {
 				lualine_x = {
 					diagnostics,
 					diff,
-					{ "encoding", cond = hide_in_width },
-					{ "filetype", cond = hide_in_width },
-					{
-						"fileformat",
-						symbols = {
-							unix = " ",
-						},
-					},
 				},
 				lualine_y = { location },
 				lualine_z = { progress },

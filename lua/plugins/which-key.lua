@@ -110,12 +110,8 @@ return {
 			-- Treesj (Split / Join)
 			{ "<leader>w", desc = "(Split / Join)", icon = { icon = " ", color = "yellow" } },
 
-			-- Comments
-			{ "<leader>C", desc = "Comments", icon = { icon = "󱀡 ", color = "yellow" } },
-			-- Headers
-			{ "<leader>C1", desc = "Header 1", icon = { icon = "󰉳 ", color = "orange" } },
-			{ "<leader>C2", desc = "Header 2", icon = { icon = "󰉳 ", color = "orange" } },
-			{ "<leader>C3", desc = "Header 3", icon = { icon = "󰉳 ", color = "orange" } },
+			-- Inscom
+			{ "<leader>C", desc = "Inscom (Insert Comments)", icon = { icon = "󱀡 ", color = "yellow" } },
 
 			-- Renamer
 			{ "<leader>r", desc = "Renamer", icon = { icon = "󰑕 ", color = "cyan" } },
