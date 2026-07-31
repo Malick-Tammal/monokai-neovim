@@ -1,6 +1,9 @@
 return {
 	"Wansmer/treesj",
 	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+	},
 
 	-- HACK: Config
 	config = function()

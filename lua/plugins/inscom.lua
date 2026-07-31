@@ -1,5 +1,7 @@
 return {
-	"malick-tammal/inscom.nvim",
+	-- "malick-tammal/inscom.nvim",
+	dir = "/home/malick-tammal/Projects/inscom.nvim/",
+
 	cond = not vim.g.vscode,
 	event = "VeryLazy",
 

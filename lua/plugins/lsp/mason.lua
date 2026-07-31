@@ -48,6 +48,7 @@ return {
 				"hyprls",
 				"qmlls",
 				"pyright",
+				"taplo",
 			},
 			automatic_installation = true,
 		})

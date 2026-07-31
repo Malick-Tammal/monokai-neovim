@@ -74,6 +74,7 @@ return {
 				"hyprls",
 				"qmlls",
 				"pyright",
+				"taplo",
 			})
 		end,
 	},
