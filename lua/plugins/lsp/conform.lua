@@ -23,6 +23,7 @@ return {
 				sh = { "shfmt" },
 				zsh = { "beautysh" },
 				jsonc = { "prettier" },
+				yaml = { "prettier" },
 
 				-- INFO: Other
 				rust = { "rustfmt" },

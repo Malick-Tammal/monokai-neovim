@@ -75,6 +75,7 @@ return {
 				"qmlls",
 				"pyright",
 				"taplo",
+				"yamlls",
 			})
 		end,
 	},

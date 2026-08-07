@@ -49,6 +49,7 @@ return {
 				"qmlls",
 				"pyright",
 				"taplo",
+				"yamlls",
 			},
 			automatic_installation = true,
 		})
