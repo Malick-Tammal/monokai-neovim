@@ -28,6 +28,8 @@ return {
 				-- INFO: Other
 				rust = { "rustfmt" },
 				python = { "autoflake" },
+				qml = { "qmlformat" },
+				qmljs = { "qmlformat" },
 			},
 
 			format_on_save = {
