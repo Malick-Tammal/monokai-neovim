@@ -25,6 +25,7 @@ return {
 			"vimdoc",
 			"regex",
 			"qmljs",
+			"rust",
 		}
 
 		local ts = require("nvim-treesitter")

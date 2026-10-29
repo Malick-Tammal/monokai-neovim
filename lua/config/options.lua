@@ -95,3 +95,6 @@ opt.expandtab = true
 
 --  BUG: Fixing the new bug (for now)
 vim.opt.ruler = false
+
+--  NOTE: scrollbar-nvim old config support
+vim.g.scrollbar_v2_notice = false
