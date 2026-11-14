@@ -3,7 +3,7 @@ return {
 	cond = not vim.g.vscode,
 	cmd = "Copilot",
 	event = "InsertEnter",
-	enabled = false,
+	enabled = true,
 
 	keys = {
 		{ "<leader>tC", "<Cmd>Copilot toggle<CR>" },

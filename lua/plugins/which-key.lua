@@ -161,6 +161,9 @@ return {
 
 			-- Supermaven
 			{ "<leader>tS", desc = "Toggle Supermaven (AI)", icon = { icon = "󰚩", color = "orange" } },
+
+			-- Minuet-ai
+			{ "<leader>tm", desc = "Toggle Minuet AI", icon = { icon = "󰚩", color = "orange" } },
 		})
 
 		wk.setup({

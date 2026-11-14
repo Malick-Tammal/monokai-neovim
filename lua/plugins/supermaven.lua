@@ -2,7 +2,7 @@ return {
 	"supermaven-inc/supermaven-nvim",
 	cond = not vim.g.vscode,
 	event = "InsertEnter",
-	enabled = true,
+	enabled = false,
 
 	keys = {
 		{ "<leader>tS", "<Cmd>SupermavenToggle<CR>" },
